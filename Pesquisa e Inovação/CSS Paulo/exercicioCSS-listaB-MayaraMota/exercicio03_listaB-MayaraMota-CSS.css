@@ -4,7 +4,8 @@ body{
 }
 .div_B{
     background-color: #fff;
-    height: 50vh;
+    height: 500px;
+    width: 50vw;
 /*    B3) Tenha a largura de metade da janela de exibição (viewport);
     
     B4) Tenha uma borda preta, de 10 pixels, que seja pontilhada (dotted);
@@ -23,11 +24,13 @@ body{
 .div_C{
    background-color: #fcfc84;
    height:50px;
+   width: 30%;
  /*  C4) Tenha a largura de trinta porcento do elemento pai*/   
 }
 .div_D{
     background-color: rgb(250, 97, 41);
     height: 100px;
+    width: 30%;
 /*D4) Tenha a largura de 30 porcento do elemento pai (que engloba o elemento atual);
 */    
 }
@@ -35,6 +38,9 @@ body{
     background-color: rgb(56, 138, 56);
     color: #fff;
     font-size: 30px;
+    padding: 50px;  /*interno*/
+    margin-left: 50px;
+    margin-top: 50px;
 /*
 E6) Tenha um espaçamento INTERNO de 50 pixels;
 

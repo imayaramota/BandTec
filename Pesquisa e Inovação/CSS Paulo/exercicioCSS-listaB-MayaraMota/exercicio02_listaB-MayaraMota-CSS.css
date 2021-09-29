@@ -1,6 +1,7 @@
 .div_A{
     background-color: rgb(248, 149, 248);
     height: 250px;
+    width: 100%;
 /*    A3) Ocupe toda a largura do body;
 
    A4) Tenha a renderização (display) dos seus elementos filhos como “flexíveis”;
@@ -13,6 +14,7 @@
 .div_B{
     background-color: #ffcad3;
     width: 250px;
+    height: 100%;
 /*  B3) Ocupe toda a altura do elemento pai;
 
    B5) Tenha uma borda de qualquer estilização, de cor vermelha, com largura de 20 pixels;
