@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Exercicios 03 lista B</title>
+</head>
+<body>
+    
+     <!--
+        A tag input cria um campo para entrada de dados
+        Vamos SEMPRE usar o type="text" (ou omitir este atributo)
+        Vamos SEMPRE usar o atributo id
+        
+        O atributo placeholder cria um texto temporário dentro do próprio campo
+        O campo com atributo autofocus terá o cursor nele quando a pagina for carregad
+    
+    -->
+    <h2> CADASTRE SEUS DADOS  </h2>
+    
+    Insira a sua cidade natal:
+    <input id="cidade" type="text" placeholder="Cidade Natal">
+    <br> <br>
+    
+    Insira seu ano de nascimento:
+    <!-- PODERIA SER TEXT AO INVES DE DATE-->
+    <input id="nascimento" type="date" placeholder="Ano de Nascimento">
+    <br><br>
+    
+    <button onclick="cadastro()" > Cadastro </button>
+
+    <br><br>
+    <div id="div_mensagem"> 
+    </div>
+
+</body>
+</html>
+<script>
+    function cadastro (){
+        div_mensagem.innerHTML += "VOCÊ NASCEU NA CIDADE:" + ' ' + "<b>" + cidade.value + "</b>" + ' ' + "em" + ' ' + "<u>" + nascimento.value + "</u>" + "<br>"
+
+        // limpar a caixa
+        cidade.value = '';
+        nascimento.value = '';
+    }
+
+   
+</script>

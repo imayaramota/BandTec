@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    <h2>Simulação Cofrinho</h2>
+    <select id="simulacao_cofrinho">
+        <option value="mudar">Selecione um Valor</option>
+        <option value="0.05">R$ 0.05 </option> 
+        <option value="0.10">R$ 0.10 </option> 
+        <option value="0.25">R$ 0.25 </option> 
+        <option value="0.50">R$ 0.50 </option> 
+        <option value="1.00">R$ 1.00 </option>  
+        <option value="2.00">R$ 2.00 </option>
+        <option value="5.00">R$ 5.00 </option>
+        <option value="10.00">R$ 10.00 </option>
+        <option value="20.00">R$ 20.00 </option>
+        <option value="50.00">R$ 50.00 </option>
+        <option value="100.00">R$ 100.00 </option>
+        <option value="200.00">R$ 200.00 </option>
+    </select> <br>
+    O saldo do cofrinho é de: <b>R$ <b id="cofre"> 0.00</b></b><br>
+    A quantidade de operações foi: <b id="depositos">0</b><br>
+    Média dos depósitos: R$<b id="media"> 0.00</b><br><br>
+    <button onclick="depositar()"> Depositar </button>
+    <button onclick="gastar_grana()"> Gastar Grana </button>
+</body>
+</html>
+<script>
+    var deposito_txt = 0;
+function depositar(){
+  var valor = Number (cofre.innerHTML);
+ 
+   var valor_simulacao = Number (simulacao_cofrinho.value);
+   cofre.innerHTML = (valor + valor_simulacao).toFixed(2);
+   //cofre.innerHTML =  ( valor_simulacao /100).toFixed(2);
+ 
+   deposito_txt ++;
+   depositos.innerHTML = deposito_txt; 
+   media.innerHTML = ((valor + valor_simulacao) / deposito_txt).toFixed(2);   
+  // media.innerHTML = (cofre / deposito_txt).toFixed(2);     
+}
+function gastar_grana(){
+    cofre.innerHTML= `0.00`
+    depositos.innerHTML= `0`
+   // media.innerHTML =  (cofre / depositos.value).toFixed(2);    
+}
+</script>
+
+
+

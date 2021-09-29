@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercico 13 if else </title>
+</head>
+<body>
+    <h2> Exercicio 13 if else </h2>
+    <h4>  Valor guardado: R$ <span id="guardado">0.00</span></h4>
+        <button onclick="guardar()">Guardar R$5,00</button> 
+        <button onclick="gastar()">Gastar R$10,00</button>
+        <br><br>
+        <span id="mensagem"></span>
+</body>
+</html>
+<script>
+    var result = 0;
+    function guardar(){
+        result += 5; // = result = result + 5
+        guardado.innerHTML = `${result.toFixed(2)}`; 
+        msg();
+    }
+    function gastar(){
+        result -= 10;
+        guardado.innerHTML = `${result.toFixed(2)}`;
+        msg();
+    } 
+    function msg(){
+       console.log(result);
+        if (result < 0){
+               mensagem.innerHTML=`Finanças em perigo!<br>`;
+            if (result < -20){
+               mensagem.innerHTML +=`<span style="color: #d63131;">Quase um Corinthians!</span>`;
+            }
+        }
+        else if(result >= 0){
+              mensagem.innerHTML=`<span style="color: #4747c0;">Financas OK!</span><br>`;
+            if (result > 100){
+               mensagem.innerHTML +=`#ostentação`;
+            }
+        }  
+    }
+</script>

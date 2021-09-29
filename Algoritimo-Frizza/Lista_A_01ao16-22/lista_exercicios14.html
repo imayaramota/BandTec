@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Exercicio 14</title>
+</head>
+<body>
+   <!--14. Crie um programa em HTML/JS a qual: 
+
+a) Tenha os botões "Gente tímida" e "Gente que causa" 
+
+b) Abaixo dos botões já deve aparecer a foto de uma pessoa com cara de confiante 
+
+c) Ao clicar no primeiro botão, a foto some 
+
+d) Ao clicar no segundo botão, a foto aparece 
+
+-->
+    <h4> Exercicio 14</h4>
+    
+    <button onclick="timida()"> Gente tímida </button>
+    
+    <button onclick="causa()"> Gente que causa </button>
+    <br><br>
+
+
+    <br> 
+    <div id="mensagem" > 
+        <img src="https://www.vittude.com/blog/wp-content/uploads/auto-confian%C3%A7a-2.jpg" alt="confiante" style="width: 300px;">
+     </div>
+
+
+</body>
+</html>
+<script>
+    // quando coloca =+ no inner ele adicina em baixo, se colocar sem mais ele substitui!!/*
+
+    function timida() {
+        mensagem.innerHTML = '  ';
+
+    }
+    function causa() {
+        mensagem.innerHTML += '<img src="https://www.vittude.com/blog/wp-content/uploads/auto-confian%C3%A7a-2.jpg" alt="confiante" style="width: 300px;">  ';
+
+    }
+</script>

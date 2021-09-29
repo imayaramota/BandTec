@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+</head>
+<body>
+    
+    <h2> Exercicio 08</h2>
+    
+    <button onclick="alerta()"> Boas-Vindas no Alerta! </button>
+    
+    <br><br>
+    <button onclick="mensagem_tela()"> Boas-Vindas na Página! </button>
+    
+    <br> <br>
+    <div id="mensagem" style="color: yellow; background-color: black;">
+            
+        </div>
+
+</body>
+</html>
+
+<script>
+    function alerta(){
+        alert (" Hello Hello Boas-Vindas! ");
+    }
+
+    function mensagem_tela() {
+        mensagem.innerHTML += '<br> Boas-Vindas queridos! ';
+
+ // mensagem.innerHTML += '<br> <span style= "color: yellow; background-color: black;"> Boas-Vindas queridos! </span> ';/*
+    }
+</script>

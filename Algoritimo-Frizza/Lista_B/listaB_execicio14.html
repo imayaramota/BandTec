@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 14</title>
+</head>
+<body>
+    <h2> Exercicio 14 </h2>
+    Quantidade de votos do Zé Buduia na eleição: <input id="quant_ze" type="text" placeholder="Insira aqui"> <br> <br>
+    Quantidade de votos da Maria Bigodenha na eleição: <input id="quant_maria" type="text" placeholder="Insira aqui"> <br> <br>
+    Quantidade de votos em brancos na eleição: <input id="quant_brancos" type="text" placeholder="Insira aqui"> <br> <br>
+    Quantidade de votos nulos: <input id="quant_nulos" type="text" placeholder="Insira aqui"> <br> <br>
+    <button onclick="calcular()"> Resultado da Eleição </button> <br><br>
+    <div id="div_mensagem"> </div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var branco= Number (quant_brancos.value);
+        var nulos= Number (quant_nulos.value);
+        var ze= Number (quant_ze.value);
+        var maria= Number (quant_maria.value);
+        var result_cand= Number(ze) + Number(maria);
+        var result_invalidos = Number(nulos) + Number(branco);
+
+        var result_total = Number(result_cand) + Number(result_invalidos);
+       
+        var result_ze = (ze / result_total) * 100;
+        var result_maria = (maria / result_total) * 100;
+        var result_inva = (result_invalidos / result_total ) * 100
+
+    div_mensagem.innerHTML +=  `<b> Total de votos:</b> <b><u>${result_total}</u></b> <br>
+    <b> Zé Ruela:</b> ${result_ze}% (${quant_ze.value}) votos <br>
+    <b> Maria Bigodenha:</b> ${result_maria}% (${quant_maria.value}) votos<br> 
+    <b> Inválidos:</b> ${result_inva}% (${result_invalidos}) votos`;
+} 
+</script>

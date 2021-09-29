@@ -1,0 +1,43 @@
+
+body{
+    background-color: #c9c2c2;
+}
+.div_B{
+    background-color: #fff;
+    height: 50vh;
+/*    B3) Tenha a largura de metade da janela de exibição (viewport);
+    
+    B4) Tenha uma borda preta, de 10 pixels, que seja pontilhada (dotted);
+    
+    B5) Tenha a renderização (display) dos seus elementos filhos como “flexíveis”;
+    
+    B6) Tenha a direção do flex como “coluna”, para que os elementos filhos fiquem um embaixo do outro;
+    
+    B7) Justifique o conteúdo no centro, para que os elementos filhos fiquem centralizados dentro desse elemento, verticalmente;
+*/     
+    border: dotted 10px #000; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.div_C{
+   background-color: #fcfc84;
+   height:50px;
+ /*  C4) Tenha a largura de trinta porcento do elemento pai*/   
+}
+.div_D{
+    background-color: rgb(250, 97, 41);
+    height: 100px;
+/*D4) Tenha a largura de 30 porcento do elemento pai (que engloba o elemento atual);
+*/    
+}
+.div_E{
+    background-color: rgb(56, 138, 56);
+    color: #fff;
+    font-size: 30px;
+/*
+E6) Tenha um espaçamento INTERNO de 50 pixels;
+
+E7) Tenha um espaçamento EXTERNO de 50 pixels na lateral esquerda, e no topo do elemento;
+*/   
+}

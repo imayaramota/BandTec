@@ -1,0 +1,27 @@
+.conteiner{
+    width: 100vw;
+    height: 100vh ;
+    background-color:#000 ;
+    display: flex;
+}
+.primeiro{
+    width: 30vw;
+    height:30vh;
+    background-color: #ff0000;
+    margin: 100px 50px 70px 70px; /* margin é o espaçamento externo || 
+    100px da o espaçamento de cima (deixa uma pequena margem em cima ex:50px), 50px direito, */
+}
+.segundo{
+    width: 30vw;
+    height:30vh;
+    background-color: #0000ff;
+    padding: 100px 100px; /* padding é o espaçamento interno*/
+}
+.text01{
+    color:#fff;
+    background-color:#116d11 ;
+}
+.text02{
+    color:#fff;
+    background-color:#116d11 ;
+}

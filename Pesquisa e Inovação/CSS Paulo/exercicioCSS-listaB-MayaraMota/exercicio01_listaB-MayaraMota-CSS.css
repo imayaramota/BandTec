@@ -1,0 +1,32 @@
+.div_A{
+    background-color: #f12a2a;
+    width: 50px;
+    height: 50px ;
+    /*A3) Tenha uma borda sólida/contínua, de cor verde, com largura de 2 pixels;
+
+    A4) Tenha um espaçamento EXTERNO de 100 pixels no topo do elemento; */
+    border: solid 2px #6eff69;
+    margin-top: 100px;
+}
+.div_B{
+ 
+ /* height: ;
+    width: ;
+    B2) Tenha a altura de metade da janela de exibição (viewport);
+
+   B3) Ocupe metade da largura do body.
+
+   B4) Tenha uma borda vermelha, com largura de 10 pixels, que seja tracejada (dashed);
+
+   B5) Tenha um espaçamento EXTERNO de 100 pixels na lateral esquerda, e no topo do elemento;
+
+*/
+
+    background-color: #000;
+    height: 50vh;
+    width: 50vw;
+    border: dashed 10px #f12a2a;
+    margin-left: 100px;
+    margin-top: 100px;
+
+}

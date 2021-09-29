@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 12</title>
+</head>
+<body>
+    <h2> Exercicio 12 </h2>
+    Qual o "ki base" (força base) do guerreiro Sayajin <br><input id="ki_base" type="text" placeholder="Insira aqui"> <br> 
+    <p> <b> Transformar em... </b> </p>
+    <button onclick="calc_SSJ()"> SSJ </button> 
+    <button onclick="calc_SSJ2()"> SSJ2 </button> 
+    <button onclick="calc_SSJ3()"> SSJ3 </button> 
+    <div id="div_mensagem"> </div>
+</body>
+</html>
+<script>
+    function calc_SSJ() {
+        div_mensagem.innerHTML = `<br>Após se transformar em SSJ, o ki desse Sayajin passa a ser de  ${ki_base.value * 50} 
+        <br><br><img src="https://moodle.digitalschool.com.br/pluginfile.php/3641/mod_page/content/2/image.png" alt="ssj">`
+        ki_base.value = '';
+}  
+function calc_SSJ2() {
+        div_mensagem.innerHTML = `<br>Após se transformar em SSJ2, o ki desse Sayajin passa a ser de  ${ki_base.value * 100}
+        <br><br><img src="https://moodle.digitalschool.com.br/pluginfile.php/3641/mod_page/content/2/image%20%281%29.png" alt="ssj2">`
+        ki_base.value = '';
+}  
+function calc_SSJ3() {
+        div_mensagem.innerHTML = `<br>Após se transformar em SSJ3, o ki desse Sayajin passa a ser de  ${ki_base.value * 200}
+        <br><br><img src="https://moodle.digitalschool.com.br/pluginfile.php/3641/mod_page/content/2/image%20%282%29.png" alt="ssj3">`
+        ki_base.value = '';
+}  
+</script>

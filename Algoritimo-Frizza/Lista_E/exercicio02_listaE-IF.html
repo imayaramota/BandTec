@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercico 02 </title>
+</head>
+<body>
+        <h2> Exercicio 02 </h2>
+        Digite a quantidade de latinhas que você toma por dia: <input id="input_latinhas" placeholder="Insira aqui"><br><br>
+        <button onclick="calcular()">Calcular</button><br><br>
+        <span id="mensagem"></span>
+</body>
+</html>
+<script>
+function calcular(){
+    var auxiliar_total_latinhas = 0
+    auxiliar_total_latinhas = input_latinhas.value * 365;
+    mensagem.innerHTML += `A quantidade de latinhas que você consome por ano é de <b>${auxiliar_total_latinhas}</b> latinhas.<br>`; 
+    // mensagem.innerHTML += "A quantidade de latinhas que você consome por ano é de <b>" + auxiliar_total_latinhas + "</b> latinhas.<br>";  
+    input_latinhas.value='';
+    if (auxiliar_total_latinhas >= 500){
+     //alert ('Cuidado com a diabetes!');
+     mensagem.innerHTML +='<b>Cuidado com a diabetes!!!</b>';
+    }  
+}
+</script>

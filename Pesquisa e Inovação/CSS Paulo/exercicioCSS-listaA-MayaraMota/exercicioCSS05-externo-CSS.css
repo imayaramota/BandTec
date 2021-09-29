@@ -1,0 +1,28 @@
+.divA{
+    background-color: #ff95b5;
+     width: 500px; 
+     height: 500px;
+}
+.divB{
+    background: #f34e4e; 
+    width: 250px; 
+    height: 250px;
+}
+.ax_c{
+    background-color: #fff;
+    color:#a560f5; 
+    font-size: 25px; 
+    font-family:Arial, Helvetica, sans-serif; 
+    font-weight: bold;
+}
+.divD{
+    background-color: hsl(192, 86%, 66%);
+     width:50%;
+     height:50vh;
+     width:50%; height:50vh;
+}
+.divE{
+    background-color: #fff34e; 
+    width:75vw;
+     height:50%;
+}

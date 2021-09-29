@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercico 02 if else </title>
+</head>
+<body>
+        <h2> Exercicio 02 if else   </h2>
+        Insira seu o saldo da conta: <input id="input_saldo" placeholder="Insira aqui"><br><br>
+        Insira O valor do débito (ou seja, valor a tirar da conta): <input id="input_debito" placeholder="Insira aqui"><br><br>
+        <button onclick="carregar()">Analisar Conta</button><br><br>
+        <span id="mensagem"></span>
+</body>
+</html>
+<script>
+    function carregar(){
+        saldo_atual = (input_saldo.value - input_debito.value).toFixed(2)
+        if (saldo_atual < 0){
+            mensagem.innerHTML=`<b style="color: red;"> O saldo atual da conta corrente é ${saldo_atual}</b>`;
+            input_saldo.value='';
+            input_debito.value='';
+        }
+        else {
+            mensagem.innerHTML=`<i style="color: blue;" > O saldo atual da conta corrente é ${saldo_atual}</i>`;
+        }
+
+    }
+</script>

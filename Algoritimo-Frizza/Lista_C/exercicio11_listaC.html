@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 11</title>
+</head>
+<body>
+    <h2> Exercicio 11 </h2>
+    Valor guardado no cofrinho: R$<b id="cofre">0.00</b> <br> 
+    Insira o valor deseja depositar: <input id="valor_depositar" type="text" placeholder="Insira aqui"> <br> 
+    <button onclick="depositar()"> Depositar </button> 
+    <button onclick="tirar_grana()"> Tirar toda a grana </button> 
+    
+</body>
+</html>
+<script>
+function depositar(){
+   var valor = Number (cofre.innerHTML);
+   console.log(valor)
+   cofre.innerHTML = (valor + Number (valor_depositar.value)).toFixed(2); 
+   // poder ser assim, porem bem simples cofre.innerHTML= `R$ ${Number (valor_depositar.value)}`
+
+}
+function tirar_grana(){
+    cofre.innerHTML= `0.00`
+}
+
+</script>

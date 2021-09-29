@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 14</title>
+</head>
+<body>
+    <h2> Exercicio 14</h2>
+    <button onclick="iniciar_jogo()"> Iniciar Jogo </button> <br><br>
+    <div id="div_mensagem"></div>
+    <div id="div_msg"style="width: 100%;"></div>
+</body>
+</html>
+<script>
+    var lutador_um = 0;
+    var lutador_dois = 0;
+    function iniciar_jogo(){
+        div_mensagem.innerHTML = `<div style="float: left; width: 50%;"> <button onclick="thor()">
+        <img src="https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q80/wp-content/uploads/2020/09/legiao_4nZfDUurdHkz.jpg" style="height: 300px;"> </button><br><br>
+        Golpes sofridos pelo lutador 1: <span id= "lutador1"> 0 </span> </div>
+
+        <div style="float: right; width: 50%;"> <button onclick="loki()">
+        <img src="https://disneyplusbrasil.com.br/wp-content/uploads/2021/06/Loki-Presidente-1024x576.jpg" style="height: 300px;"> </button><br><br>
+        Golpes sofridos pelo lutador 2:  <span id= "lutador2"> 0 </span> </div>`
+
+        div_msg.innerHTML = `<h2>BARRA DE VIDA</h2>
+        <div id="div_barra_vida" style = "height:20px; background-color: green"></div>`
+    }
+    function thor(){
+        lutador_um ++;
+        lutador1.innerHTML= lutador_um;
+        //div_barra_vida.style.width =`${result_maria}%`
+    }
+    function loki(){
+        lutador_dois ++;
+        lutador2.innerHTML= lutador_dois;
+    }
+</script>

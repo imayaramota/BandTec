@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 22</title>
+</head>
+<body>
+    <h3> Exercicio 22 </h3>
+    <h1> Cinemas Filmex </h1>
+    <button onclick="quatroIngressos()"> 04 ingressos </button> 
+    <button onclick="seisIngressos()"> 06 ingressos </button> 
+    <button onclick="oitoIngressos()"> 08 ingressos </button> <br><br>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+     function quatroIngressos(){
+        div_mensagem.innerHTML += ` Ao comprar 4 ingressos, você pagou R$${48.00.toFixed(2) - 32.00.toFixed(2)} a menos. <br>`;
+         
+    }
+    function seisIngressos(){
+        div_mensagem.innerHTML +=` Ao comprar 6 ingressos, você pagou R$${72.00 - 42.00} a menos.<br>`;
+    }
+    function oitoIngressos(){
+        div_mensagem.innerHTML +=` Ao comprar 8 ingressos, você pagou R$${ 96.00 - 48.00} a menos.<br>`;
+    }
+</script>

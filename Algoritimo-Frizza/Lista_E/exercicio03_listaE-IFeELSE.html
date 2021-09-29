@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercico 03 if else </title>
+</head>
+<body>
+    <h3> Exercicio 03 if else   </h3>
+        <h1>  Mercado BOM DOCE  </h1>
+        <h3> PROMOÇÃO, qualquer chocolate R$ 3,00 cada e se a compra for acima de uma dúzia de chocolates o preço cai para R$ 2,50 cada um.</h3>
+
+        Insira  a quantidade de chocolates comprados: <input id="input_chocolates" placeholder="Insira aqui"><br><br>
+        <button onclick="carregar()">Compra</button><br><br>
+        <span id="mensagem"></span>
+</body>
+</html>
+<script>
+    function carregar(){
+
+        if (input_chocolates.value > 12){
+            mensagem.innerHTML=` O valor da sua compra foi de ${(input_chocolates.value * 2.5).toFixed(2)}`;
+            input_chocolates.value='';
+        }
+        else {
+            mensagem.innerHTML=` O valor da sua compra foi de ${(input_chocolates.value * 3).toFixed(2)}`;
+        }
+
+    }
+</script>

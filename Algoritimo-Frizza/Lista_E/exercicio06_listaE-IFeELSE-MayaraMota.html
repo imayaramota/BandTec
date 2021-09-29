@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercico 06 if else </title>
+</head>
+<body>
+    <h3> Exercicio 06 if else   </h3>
+
+        Insira a temperatura do ambiente: <input id="input_temperatura" placeholder="Insira aqui"><br><br>
+        <button onclick="carregar()">Verificar clima</button><br><br>
+        <span id="mensagem"></span>
+</body>
+</html>
+<script>
+    function carregar(){
+        if (input_temperatura.value < 10){
+            mensagem.innerHTML=`Apropriada p/ conservar alimento <br><br><img src= "https://img.itdg.com.br/tdg/images/recipes/000/178/357/328308/328308_original.jpg?mode=crop&width=710&height=400" style="width: 300px;">`;
+        }
+        else {
+            mensagem.innerHTML=`Inapropriada p/ conservar alimento <br><br><img src= "https://conteudo.imguol.com.br/c/entretenimento/1a/2018/09/11/pao-estragado-1536706056533_v2_450x450.jpg" style="width: 300px;">`;
+        }
+        input_temperatura.value='';
+    }
+</script>

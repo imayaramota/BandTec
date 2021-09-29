@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 08 </title>
+</head>
+<body>
+    <h2> Exercicio 08 </h2>
+    Insira seu salário: <br><input id="salario" type="text" placeholder="Insira seu salário"> <br> <br>
+    <button onclick="calcular()"> Calcular Descontos </button> <br><br>
+    <div id="div_mensagem"> </div>
+</body>
+</html>
+<script>
+        function calcular() {
+        var sal= Number (salario.value);
+        console.log(sal)
+        var result_inss = (sal * 0.1);
+        var result_ir = (sal * 0.2);
+        var result_des = Number(result_inss) + Number(result_ir);
+        var result_total = (sal- result_des)
+        div_mensagem.innerHTML +=  ` <b>Seus descontos serão de:</b><br> INSS: <b> R$ ${result_inss} </b> <br>
+        IR(Imposto de Renda):<b> R$ ${result_ir} </b> <br>
+        Total de descontos:<b> R$ ${result_des} </b> <br> 
+        Seu salário, após os descontos será de:<b>R$ ${result_total}</b>`;
+        salario.value = '';
+    } 
+</script>

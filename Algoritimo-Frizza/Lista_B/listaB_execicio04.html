@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicios 04 lista B </title>
+</head>
+<body>
+    <h2> CALCULE SUA MÉDIA  </h2>
+    Primeira nota:
+    <input id="nota_1" type="text" placeholder="Primeira nota">
+    <br> <br>
+    
+    Segunda nota:
+    <input id="nota_2" type="text" placeholder=" Segunda nota">
+    <br><br>
+    
+    <button onclick="calcular()" > Calcular média </button>
+    <br><br>
+    <div id="div_mensagem"> </div>
+</body>
+</html>
+<script>
+function calcular() {
+    var nota01 = Number (nota_1.value);
+    var nota02= Number (nota_2.value);
+    var media = 2 ;
+
+    div_mensagem.innerHTML += `<br> Sua média é:
+    <b> ${(nota01 + nota02) / media } </b>`;
+
+    // poderia ser function calcular(){
+// var media = (Number (nota_1.value) + Number (nota_2.value)) / 2
+// div_mensagem.innerHTML += `Sua média é:${media}`
+    //}
+}
+</script>

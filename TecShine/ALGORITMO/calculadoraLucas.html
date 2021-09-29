@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <style>
+    input:invalid{
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calculadora</h1>
+  <div id="div_calculadora">
+
+    <h3>Faça sua simulação</h3>
+
+    <label for="txtHoras">Quantidade média de horas que fica ligada por dia</label>
+    <input id="txtHoras" type="text" required="required" name="numbers" pattern="[0-9]+$"/>
+    <br /><br />
+
+    <label for="txtQtdLampadas">Quantidade de lâmpadas</label>
+    <input id="txtQtdLampadas" type="text" required="required" name="numbers" pattern="[0-9]+$"/>
+    <br /><br />
+
+    <label for="txtQtdPessoas">Média de pessoas que passam por dia pela lâmpada</label>
+    <input id="txtQtdPessoas" type="text" required="required" name="numbers" pattern="[0-9]+$"/>
+    <br /><br />
+
+    <label for="datalist_watts">Selecione a voltagem da sua lâmpada em watts</label>
+    <input id="txtWatts" type="text" list="datalist_watts" />
+    <datalist id="datalist_watts">
+      <option value="7">7W</option>
+      <option value="9">9W</option>
+      <option value="10">10W</option>
+      <option value="12">12W</option>
+      <option value="15">15W</option>
+      <option value="18">18W</option>
+      <option value="20">20W</option>
+      <option value="25">25W</option>
+      <option value="40">40W</option>
+      <option value="50">50W</option>
+      <option value="60">60W</option>
+      <option value="75">75W</option>
+      <option value="100">100W</option>
+      <option value="150">150W</option>
+    </datalist>
+    <br /><br />
+    <button onclick="calcular_simulacao()">Simular</button>
+  </div>
+  <div id="div_simulacao" style="display:none">
+
+    <h3>Simulação</h3>
+
+    <p>Por mês, as <span id="span_qtd_lampadas"> 0 </span> lampadas irão gastar <span id="span_kwh_normal">0</span>KWh</p>
+
+    <p>Na sua conta de luz essa quantidade resulta no valor de R$<span id="span_valor_normal">0</span></p>
+
+    <p>Com a nossa solução os kWh, por mês, a mesma quantidade de lampadas irão gastar <span id="span_kwh"> 0 </span>KWh</p>
+    <p>Na sua conta de luz essa quantidade resulta no valor de R$ <span id="span_valor"> 0 </span> tendo uma economia de <span id="span_porcentagem"> 0 </span></p>
+
+    <br />
+    <p>**obs: considerando que o valor do kwh seja <span id="valor_KWH"> 0 </span> e não aplicando o valor de qualquer bandeira</p>
+
+    <button onclick="recalcular()">Recalcular</button>
+      
+  </div>
+</body>
+</html>
+<script>
+  function calcular_simulacao(){
+    div_calculadora.style.display = "none";
+    div_simulacao.style.display = "block";
+
+    var horas = txtHoras.value;
+    var qtdlampadas = txtQtdLampadas.value;
+    var watts = txtWatts.value;
+    var qtdAcionamentos = txtQtdPessoas.value;
+    var qtdKWPorAcionamento = watts  // Potencia da lampada
+                              / 60   //Conversão de horas para minutos
+                              / 60   //Conversão de minutos para segundos
+                              * 15   // Gasto em watts por 15 segundos
+                              / 1000;// Conversão de watts para kW  
+
+    var kwh = (watts * horas * qtdlampadas * 30 ) / 1000; // Define a quantidade de KWh que as lampadas gastam
+
+    var moeda = 0.928965517; // Valor por KWH na conta de luz
+
+    span_qtd_lampadas = qtdlampadas;
+
+    span_kwh_normal.innerHTML = kwh.toFixed(2);
+
+    span_valor_normal.innerHTML = (kwh * moeda).toFixed(2);
+
+
+    span_kwh.innerHTML = ((kwh * 0.3) -         // KWH que gasta por mês numa intesidade de 30% da capacidade da potencia da lampada
+                         (qtdKWPorAcionamento * //quantidade de watts que a lampada gasta a cada 15s(tempo de acionamento) 
+                         qtdAcionamentos))      //quantidade de acionamentos
+                         .toFixed(2);
+
+    span_valor.innerHTML = ((kwh * 0.3 - 
+                            qtdKWPorAcionamento * qtdAcionamentos) 
+                            * moeda)
+                            .toFixed(2);
+
+    span_porcentagem.innerHTML = (100 - ((kwh * 0.3 - qtdKWPorAcionamento * qtdAcionamentos) * moeda) / (kwh * moeda) * 100).toFixed(2) + '%';
+
+    valor_KWH.innerHTML = moeda.toFixed(2);
+
+    // 50.16 - 100%
+    // 15.05 - x
+
+    // 1505 / 50.16 = x
+  }
+
+  function recalcular(){
+    div_calculadora.style.display = "block";
+    div_simulacao.style.display = "none";
+  }
+</script>

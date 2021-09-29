@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+<body>
+    <h2>Estações do Ano</h2>
+    <select id="lista_estacao" onchange="estacao()">
+        <option value="mudar">Selecione uma Estação</option>
+        <option value="verao">Verão</option>
+        <option value="primavera">Primavera</option>
+        <option value="outono">Outono</option>
+        <option value="inverno">Inverno</option>
+    </select> <br><br>
+    <img id="img_estacoes01"src= "" style="width: 300px;"><br>
+    <img id="img_estacoes02"src= "" style="width: 300px;"><br>
+    <img id="img_estacoes03"src= "" style="width: 300px;"><br>
+</body>
+</html>
+<script>
+    function estacao() {
+        if(lista_estacao.value == 'verao'){
+        img_estacoes01.src =  'https://meioambiente.culturamix.com/blog/wp-content/gallery/primavera/Primavera-2.jpg ';
+        img_estacoes02.src = 'https://www.estudokids.com.br/wp-content/uploads/2015/04/outono-passagem-do-verao-para-o-inverno-1200x675.jpg';
+        img_estacoes03.src = 'https://conhecimentocientifico.r7.com/wp-content/uploads/2020/11/estacoes-do-ano-quais-sao-caracteristicas-e-datas-5.jpg';
+    }
+    else if(lista_estacao.value == 'primavera'){
+            img_estacoes01.src = 'https://assets-global.website-files.com/5cc70a3a0871f750442da9d5/5ffdab05f0d4d1c575f8486e_dicas-de-como-aproveitar-o-verao-na-pandemia.jpg';
+            img_estacoes02.src = 'https://www.estudokids.com.br/wp-content/uploads/2015/04/outono-passagem-do-verao-para-o-inverno-1200x675.jpg';
+            img_estacoes03.src = 'https://conhecimentocientifico.r7.com/wp-content/uploads/2020/11/estacoes-do-ano-quais-sao-caracteristicas-e-datas-5.jpg';
+    }
+    else if(lista_estacao.value == 'outono'){
+            img_estacoes01.src ='https://assets-global.website-files.com/5cc70a3a0871f750442da9d5/5ffdab05f0d4d1c575f8486e_dicas-de-como-aproveitar-o-verao-na-pandemia.jpg';
+            img_estacoes02.src ='https://meioambiente.culturamix.com/blog/wp-content/gallery/primavera/Primavera-2.jpg';
+            img_estacoes03.src = 'https://conhecimentocientifico.r7.com/wp-content/uploads/2020/11/estacoes-do-ano-quais-sao-caracteristicas-e-datas-5.jpg';
+    }
+    else if(lista_estacao.value == 'inverno'){
+            img_estacoes01.src = 'https://assets-global.website-files.com/5cc70a3a0871f750442da9d5/5ffdab05f0d4d1c575f8486e_dicas-de-como-aproveitar-o-verao-na-pandemia.jpg';
+            img_estacoes02.src ='https://meioambiente.culturamix.com/blog/wp-content/gallery/primavera/Primavera-2.jpg';
+            img_estacoes02.src = 'https://www.estudokids.com.br/wp-content/uploads/2015/04/outono-passagem-do-verao-para-o-inverno-1200x675.jpg';
+    }
+    }
+</script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercico 11 if else </title>
+</head>
+<body>
+    <h3> Exercicio 11 if else  </h3>
+    <select id="escolha_especie" onchange="mudar()">
+        <option value="especie">  - Escolha uma espécie -</option>
+        <option value="oviparos"> Ovíparos </option> 
+        <option value="mamiferos"> Mamiferos </option> 
+    </select> <br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function mudar(){
+        if(escolha_especie.value == 'oviparos'){
+            mensagem.innerHTML = `<select id="escolha_oviparos" onchange="mudar_oviparos()">
+        <option value="escolhaO">  - Ovíparos -</option>
+        <option value="galinha"> Galinha </option> 
+        <option value="peixe">  Peixe </option> 
+        <option value="tartaruga"> Tartaruga </option> 
+        </select> <br> <br>
+        <img id="img_oviparos"src= "" style="width: 300px;">`
+    }
+        else if (escolha_especie.value == 'mamiferos'){
+            mensagem.innerHTML = `<select id="escolha_mamiferos" onchange="mudar_mamiferos()">
+        <option value="escolhaM">  - Mamiferos -</option>
+        <option value="elefante">  Elefante </option> 
+        <option value="porco"> Porco </option> 
+        <option value="coelho"> Coelho </option>
+        </select> <br> <br>
+        <img id="img_mamiferos"src= "" style="width: 300px;">`
+        } 
+    }
+
+    function mudar_oviparos(){
+        if (escolha_oviparos.value == 'galinha'){
+            img_oviparos.src = "https://opresenterural.com.br/wp-content/uploads/2021/06/VACCINAR-FOTO-GALINHA-POEDEIRA-VACCINAR-DIVULGA%C3%87%C3%83O-2021-e1623170813779.jpg" 
+        }
+        else if (escolha_oviparos.value == 'peixe'){
+            img_oviparos.src = "https://www.dicaspetz.com.br/wp-content/uploads/2020/03/peixe-doente-pet.jpg"
+        }
+        else if (escolha_oviparos.value == 'tartaruga'){
+            img_oviparos.src = "https://cdn.diferenca.com/imagens/tartaruga-cagado-e-jabuti-og.jpg" 
+        } 
+        else if (escolha_oviparos.value == 'escolhaO'){
+            img_oviparos.src = "" 
+        } 
+        mensagem.innerHTML += `<br><br>Valor de compra do animal: <input id="inputO_valor" placeholder="Insira aqui"><br><br>
+        <button onclick="calc_oviparos()">Calcular Impostos</button><br>`       
+    }
+    function calc_oviparos(){
+        mensagem.innerHTML += `O imposto será de R$${(inputO_valor.value * 0.05).toFixed(2)}`
+    }
+
+    function mudar_mamiferos(){
+        if (escolha_mamiferos.value == 'elefante'){
+            img_mamiferos.src = "https://meusanimais.com.br/wp-content/uploads/2018/05/diferenca-vertebrados-invertebrados-elefante.jpg" 
+        }
+        else if (escolha_mamiferos.value == 'porco'){
+            img_mamiferos.src = "https://lh3.googleusercontent.com/proxy/krj9YVhjPyfcEVc78rhRhCwSe9OYGuRPLXC9GssIWxrWrPvrjmBw3XUi-9ajf7d8aUZ12uZa1QHzcU7dibzPwtMnpSts_GX9CzOqSC_lxRfq0M42I2qBerI66TIbx7o8HEe4w1aQRyFp08IgovEsvg676bOP-P1PBO88ZFLzmaVEjm7Ozg" 
+        }
+        else if (escolha_mamiferos.value == 'coelho'){
+            img_mamiferos.src = "https://www.dicaspetz.com.br/wp-content/uploads/2021/02/com-quantos-dias-os-filhotes-de-coelhos-comecam-a-comer-roedores.jpg" 
+        }
+         mensagem.innerHTML += `<br><br>Valor de compra do animal: <input id="inputM_valor" placeholder="Insira aqui"><br><br>
+         <button onclick="calc_mamiferos()">Calcular Impostos</button><br>`
+    }
+
+    function calc_mamiferos(){
+        mensagem.innerHTML += `O imposto será de R$${(inputM_valor.value * 0.10).toFixed(2)}`
+    }
+</script>

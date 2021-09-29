@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02 &&</title>
+</head>
+<body>
+    <br><br>
+    Renda do usuário: <input id="renda_usuario" placeholder="Insira aqui"><br><br>
+    Renda familiar: <input id="renda_familiar" placeholder="Insira aqui"><br><br>
+    <button onclick="verificar()">Verificar Ajuda</button>
+</body>
+</html>
+<script>
+    function verificar(){
+        var usuario = Number (renda_usuario.value);
+        var familiar = Number (renda_familiar.value);
+        if(usuario <= 1050 && familiar <= 2100){
+            alert('Você tera direito!');
+        }
+        else {
+            alert('Você não tera direito!');
+        }
+        renda_usuario.value ='';
+        renda_familiar.value ='';
+    }
+</script>

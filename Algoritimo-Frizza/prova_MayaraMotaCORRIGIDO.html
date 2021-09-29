@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Prova Mayara Mota </title>
+</head>
+<body>
+<span id="id_sumir" style="display: block;">
+    <h1> <b> Distribuidora PedeÁgua </b> </h1>
+    <h2> <b> Orçamento de Vendas </b> </h2>
+    
+    <b> Água Natural</b><br>
+    Entre com o valor de venda: <input id="valorAgua" type="text" placeholder="Insira aqui"> <br> <br>
+    Entre com o a quantidade desejada: <input id="quantAgua" type="text" placeholder="Insira aqui"> <br> <br>
+    
+    <b> Água com Gás </b><br>
+    Entre com o valor de venda: <input id="valorGas" type="text" placeholder="Insira aqui"> <br> <br>
+    Entre com o a quantidade desejada: <input id="quantGas" type="text" placeholder="Insira aqui"> <br> <br>
+
+    <img onclick="carrinho()" src="https://w7.pngwing.com/pngs/833/426/png-transparent-shopping-cart-icon-shopping-cart-black-design-trade.png" style="height: 40px;">
+</span>
+
+<div id="id_aparecer" style="display: none;">
+    <h2> <b> Análise Orçamentaria </b> </h2>
+    <img src="https://briselier.com/wp-content/uploads/2020/11/nazare300x300.gif" style="height:300px ;"><br><br>
+    Total de unidades deste Orçamento: <b id="total_unidades"> </b><br>
+    Água Natural - Quantidade solicitada: <b id="quant_soli_agua" style="color: aqua"> </b><br>
+    Valor total de Água Natural:  <b id="total_agua" style="color: aqua;"> </b><br><br>
+
+    Água com Gás - Quantidade solicitada: <b id="quant_soli_gas" style="color:aquamarine"> </b><br>
+    Valor total de Água com Gás:  <b id="total_gas" style="color: aquamarine;"> </b><br><br>
+<span style="background: gray;"> Valor total desse Orçamento: <b id="total"> </b> </span><br><br>
+
+ Neste Orçamento a proporção do valor da <span style="background: aqua;">Água Natural</span> em relação ao total foi de: <b id="proporcaoAgua" style="color:aqua"></b><br>
+ Neste Orçamento a proporção do valor da <span style="background: aquamarine;">Água com Gas</span> em relação ao total foi de: <b id="proporcaoGas" style="color:aquamarine"></b><br><br>
+A quantidade de Água Natural de <b id="pAgua" style="color:aqua"></b> em relação ao total e a Água com Gás é: <b id="pGas" style="color:aquamarine"></b><br><br>
+
+<div id="div_barra_agua" style = "height:30px; background-color: aqua; float: left;" ></div> 
+<div id="div_barra_gas" style = "height:30px; background-color: aquamarine; float: right;"></div>
+</div>
+</body>
+</html>
+<script>
+    function carrinho(){
+    id_sumir.style.display = 'none'
+
+    var v_a = Number (valorAgua.value);
+    var q_a = Number (quantAgua.value);
+    var v_g = Number (valorGas.value);
+    var q_g = Number (quantGas.value);
+
+    var totalQuant = Number (q_a) + Number(q_g);
+    var valorTotalAgua = (q_a * v_a).toFixed(2);
+    var valorTotalGas = (q_g * v_g).toFixed(2);
+    var superTotal = (Number (valorTotalAgua) + Number(valorTotalGas)).toFixed(2);
+
+    //var ppcA = (( v_a / superTotal) * 100).toFixed(1); // var ppcG = (( v_g / superTotal) * 100).toFixed(1);
+    var ppcA = (( valorTotalAgua / superTotal) * 100).toFixed(1);
+    var ppcG = (( valorTotalGas / superTotal) * 100).toFixed(1);
+
+    var qa = (( q_a / totalQuant) * 100).toFixed(1);
+    var qg = (( q_g / totalQuant) * 100).toFixed(1);
+
+    id_aparecer.style.display = 'block'
+    total_unidades.innerHTML = `${totalQuant}`;
+
+    quant_soli_agua.innerHTML = `${q_a}`;
+    total_agua.innerHTML = `R$ ${valorTotalAgua}`;
+    quant_soli_gas.innerHTML = `${q_g}`;
+    total_gas.innerHTML = `R$ ${valorTotalGas}`;
+
+    total.innerHTML = `R$ ${superTotal}`;
+
+    proporcaoAgua.innerHTML = `${ppcA}%`;
+    proporcaoGas.innerHTML = `${ppcG}%`;
+
+    pAgua.innerHTML = `${qa}%`;
+    pGas.innerHTML = `${qg}%`;
+
+    div_barra_agua.style.width =`${ppcA}%`
+    div_barra_gas.style.width =`${ppcG}%`
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercico treinar </title>
+</head>
+<body>
+        <h2> Exercicio treinar  </h2>
+        Digite a quantidade de pontos na sua CNH: <input id="input_pontos" placeholder="Insira aqui"><br><br>
+        <button onclick="carregar()">Ir para festa</button><br><br>
+        <span id="mensagem"></span>
+</body>
+</html>
+<script>
+function carregar(){
+    var auxiliar_total_multa = 0;
+
+    if (input_pontos.value >= 20){
+     alert ('Você está com a CNH suspensa!');
+    }
+
+    auxiliar_total_multa = input_pontos.value * 78;
+    mensagem.innerHTML= `O valor total das suas multas é de R$ ${auxiliar_total_multa.toFixed(2)}`;  
+}
+</script>

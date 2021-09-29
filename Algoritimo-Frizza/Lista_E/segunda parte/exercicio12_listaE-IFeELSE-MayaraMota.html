@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercico 12 if else </title>
+</head>
+<body>
+    <h1> Exercicio 12 if else </h1>
+    <h3>Você já clicou <span id="clicou">0</span> vezes</h3>
+        <button onclick="carregar()">Clicar</button><br><br>
+        <span id="mensagem"></span>
+</body>
+</html>
+<script>
+    var clicou_txt = 0;
+    function carregar(){
+        clicou_txt ++;
+        clicou.innerHTML = clicou_txt; 
+
+        if (clicou_txt < 5){
+            mensagem.innerHTML=`Dedo fraquinho, hein`;
+        }
+        else if (clicou_txt <= 10){
+            mensagem.innerHTML=`Dedo bom, mano`;
+        }
+        else if (clicou_txt <= 15){
+            mensagem.innerHTML=`Gosta de clicar, hein`;
+        }
+        else if (clicou_txt > 15){
+            mensagem.innerHTML=`Eita dedo nervoso!`;
+        }
+    }
+</script>

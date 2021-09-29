@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercico 01 if else </title>
+</head>
+<body>
+        <h2> Exercicio 01 if else  </h2>
+        Insira seu nome: <input id="input_nome" placeholder="Insira aqui"><br><br>
+        Insira sua idade: <input id="input_idade" placeholder="Insira aqui"><br><br>
+        <button onclick="carregar()">Avaliar Aluno</button><br><br>
+        <span id="mensagem"></span>
+</body>
+</html>
+<script>
+    function carregar(){
+        if (input_idade.value >= 18){
+            mensagem.innerHTML=`${input_nome.value} vamos tirar a CNH?`;
+            input_idade.value='';
+            input_nome.value='';
+        }
+        else {
+            mensagem.innerHTML=`${input_nome.value} vai jogar PlayStation!`;
+        }
+
+    }
+</script>

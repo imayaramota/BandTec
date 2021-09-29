@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CALCULADORA MM </title>
+</head>
+<body>
+    
+    <h2> <b> CALCULADORA </b> </h2>
+    
+    PRIMEIRO NÚMERO:
+    <input id="primeiro_num" type="number" placeholder=" PRIMEIRO NÚMERO">
+    <br> <br>
+    
+    SEGUNDO NÚMERO:
+    <input id="segundo_num" type="number" placeholder=" SEGUNDO NÚMERO">
+    <br><br>
+    
+    <button onclick="multiplicar()"> Multiplicação </button>
+    <button onclick="dividir()"> Divisão </button>
+    <button onclick="exponenciacao()"> Exponenciação </button>
+    <button onclick="radiacao()"> Radiação </button>
+    <button onclick="subtracao()"> Subtração </button>
+    <button onclick="somar()"> Somar </button>
+   
+    <br><br>
+
+    <div id="div_mensagem">
+    </div>
+
+
+</body>
+</html>
+<script>
+   
+   function multiplicar() {
+        div_mensagem += `<br> O resultado:`
+    }
+
+    function dividir() {
+        div_mensagem += `<br> O resultado:`
+    }
+
+    function exponenciacao() {
+        div_mensagem += `<br> O resultado:`
+    }
+    function radiacao() {
+        div_mensagem += `<br> O resultado:`
+    }
+    function subtracao() {
+        div_mensagem += `<br> O resultado:`
+    }
+    function somar() {
+        div_mensagem.innerHTML += `<br> O resultado:
+        <b> 
+        ${Number(primeiro_num.value) + Number(segundo_num.value)} 
+        </b>`;
+    }
+    // sempre number com N maicuslo = Number
+
+</script>

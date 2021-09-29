@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercico 04 if else </title>
+</head>
+<body>
+    <h3> Exercicio 04 if else   </h3>
+
+        Insira a frequência do aluno: <input id="input_frequencia" placeholder="Insira aqui"><br><br>
+        <button onclick="carregar()">Analisar frequência</button><br><br>
+        <span id="mensagem"></span>
+</body>
+</html>
+<script>
+    function carregar(){
+
+        if (input_frequencia.value < 50){
+            mensagem.innerHTML=`<img src= "https://st.depositphotos.com/2117297/2868/i/600/depositphotos_28680923-stock-photo-happy-tourists-taking-photo-of.jpg" style="width: 300px;">`;
+        }
+        else {
+            mensagem.innerHTML=`<img src= "https://www.telavita.com.br/blog/wp-content/uploads/2020/06/filho-1024x682.jpg" style="width: 300px;">`;4
+        }
+        input_frequencia.value='';
+    }
+</script>

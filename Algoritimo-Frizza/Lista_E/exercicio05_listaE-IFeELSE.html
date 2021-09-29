@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercico 05 if else </title>
+</head>
+<body>
+    <h3> Exercicio 05 if else   </h3>
+
+        Insira a sua primeira nota: <input id="input_nota1" placeholder="Insira aqui"><br><br>
+        Insira a sua segunda nota: <input id="input_nota2" placeholder="Insira aqui"><br><br>
+        <button onclick="carregar()">Verificar situação</button><br><br>
+        <span id="mensagem"></span>
+</body>
+</html>
+<script>
+    function carregar(){
+        media = ((Number(input_nota1.value) + Number (input_nota2.value)) / 2).toFixed(2);
+        if (media >= 6){
+            mensagem.innerHTML=`Sua média é ${media} Parabéns, aprovado!`;
+        }
+        else {
+            mensagem.innerHTML=`Sua média é ${media} Tente outra vez, reprovado...`;
+        }
+        input_nota1.value='';
+        input_nota2.value='';
+    }
+</script>

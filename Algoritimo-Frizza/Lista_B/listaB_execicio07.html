@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07 </title>
+</head>
+<body>
+    
+
+    <h2> GRAFICO DA SUA FREQUÊNCIA </h2>
+    
+    Insira seu nome:
+    <input id="nome" type="text" placeholder="Insira seu nome">
+    <br> <br>
+    
+    Insira a quantidade de aulas totais do curso:
+    <input id="aula_totais" type="text" placeholder=" Aulas totais">
+    <br><br>
+    
+    Insira a quantidade de aulas que você faltou:
+    <input id="aula_faltou" type="text" placeholder=" Aulas totais">
+    <br><br>
+
+    <button onclick="calcular()"> Calcular Frequência </button>
+
+    <br><br>
+    <div id="div_mensagem"> 
+    </div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var aula_t = Number (aula_totais.value);
+        var aula_f= Number (aula_faltou.value);
+        var result = ((aula_t - aula_f) / aula_t) * 100
+    
+        div_mensagem.innerHTML += `<br> <span style="color: blue"> Sua média é: ${nome.value}</span>
+        <span style="color: green;"> <b> ${((aula_t - aula_f) / aula_t) * 100 } % </span> </b>`
+
+        div_mensagem.innerHTML += '<div id="div_barra_porcentagem" style = "height:20px; background-color: gray"></div>'
+       console.log (result) 
+       div_barra_porcentagem.style.width =`${result}%`
+        // limpar a caixa
+        nome.value = '';
+        aula_totais.value = '';
+        aula_faltou.value = '';
+
+    }
+    </script>

@@ -1,0 +1,31 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequência</title>
+</head>
+<body>
+  <label for="inp_nome">Nome</label><input id="inp_nome" type="text"/><br><br>  
+  <label for="qtd_aulas">Qtd aulas</label><input id="qtd_aulas" type="text"/><br><br>
+  <label for="qtd_faltas">Qtd faltas</label><input id="qtd_faltas" type="text"/><br><br>
+  <button onclick="calcular()">Calcular Frequência</button>
+  <br><br>
+  <div id="resul">
+   
+  </div>
+</body>
+</html>
+<script>
+  function calcular(){
+    var porcentagem = ((qtd_aulas.value - qtd_faltas.value) / qtd_aulas.value) * 100
+    resul.innerHTML = `<span style="color: blue">Olá ${inp_nome.value}! Sua frequência foi de </span> <b style="color: green">${porcentagem}%</b><br>`
+    resul.innerHTML += `O total de aulas foi ${qtd_aulas.value} e o aluno faltou ${qtd_faltas.value} aula<br>`
+    
+    resul.innerHTML += '<div id="div_porcentagem" style="height: 20px;background-color: gray"></div>'
+    div_porcentagem.style.width = `${porcentagem}%`
+  }
+</script>

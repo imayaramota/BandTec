@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07</title>
+</head>
+<body>
+    
+    <h2> Exercicio 07</h2>
+    
+    <button onclick="alerta()"> Boas-Vindas no Alerta! </button>
+    
+    <br><br>
+    <button onclick="mensagem_tela()"> Boas-Vindas na Página! </button>
+    
+    <div id="mensagem">
+        
+    </div>
+
+</body>
+</html>
+
+<script>
+    function alerta(){
+        alert (" Hello Hello Boas-Vindas! ");
+    }
+
+    function mensagem_tela() {
+   mensagem.innerHTML += '<br> Boas-Vindas queridos!  ';
+    }
+</script>

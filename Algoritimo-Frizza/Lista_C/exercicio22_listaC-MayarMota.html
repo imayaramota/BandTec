@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercico 22</title>
+</head>
+<body>
+    <span id="id_sumir" style="display: block;">
+        <h2> Exercicio 22 </h2>
+        <input id="input_leste" placeholder="Entregas para ZL"><br>
+        <input id="input_sul" placeholder="Entregas para ZS"><br>
+        <input id="input_norte" placeholder="Entregas para ZN"><br>
+        <input id="input_oeste" placeholder="Entregas para ZO"><br><br>
+        <button onclick="carregar()">Carregar Agenda</button><br>
+    </span><BR></BR>
+    <div id="id_aparecer" style="display: none;">
+        Entregas ZL: <span id="result_zl"></span><br>
+        Entregas ZS: <span id="result_zs"></span> <br>
+        Entregas ZN: <span id="result_zn"></span> <br>
+        Entregas ZO: <span id="result_zo"></span> <br>
+        Entregas restantes: <b id="rest"></b> <br><br>
+    
+        <button onclick="entregar_zl()">Entregar ZL</button>
+        <button onclick="entregar_zs()">Entregar ZS</button>
+        <button onclick="entregar_zn()">Entregar ZN</button>
+        <button onclick="entregar_zo()">Entregar ZO</button>
+    </div>  
+    </body>
+</html>
+    <script>
+    function carregar(){
+        id_sumir.style.display = 'none';
+        var x = Number(input_leste.value);
+        var y = Number(input_sul.value);
+        var z = Number(input_norte.value);
+        var w = Number(input_oeste.value);
+    
+        var restante = x+y+z+w;
+        id_aparecer.style.display = 'block'
+        result_zl.innerHTML = `${x}`;
+        result_zs.innerHTML = `${y}`;
+        result_zn.innerHTML = `${z}`;
+        result_zo.innerHTML = `${w}`;
+        rest.innerHTML = `${restante}`;
+    }
+    function entregar_zl(){
+    result_zl.innerHTML -= 1
+    rest.innerHTML -= 1
+    }
+    function entregar_zs(){
+    result_zs.innerHTML -= 1
+    rest.innerHTML -= 1
+    }
+    function entregar_zn(){
+    result_zn.innerHTML -= 1
+    rest.innerHTML -= 1
+    }
+    function entregar_zo(){
+    result_zo.innerHTML -= 1
+    rest.innerHTML -= 1
+    }
+    </script>
