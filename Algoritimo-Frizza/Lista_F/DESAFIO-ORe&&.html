@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO FRIZZA</title>
+</head>
+<body>
+<div id="tela01" style="display: block;">
+    <h1>Seja Bem-Vindo ao Banco KNAB</h1><br><br><br>
+    <h2>Simulação de Emprestimos e Investimentos</h2><br><br><br>
+    <h3>Entre com dos dados da sua conta</h3>
+    <input id="input_conta" placeholder="Conta">
+    <input id="input_digito" placeholder="Digito">
+    <input id="input_senha" placeholder="Senha">
+    <button onclick="simular()">Simular</button><br>
+</div>
+
+  <div id="tela02" style="display: none;">
+    <h1>Seja Bem-Vindo ao Banco KNAB é a sua MELHOR OPÇÃO</h1><br><br><br>
+    <h2>Simulação de Emprestimos e Investimentos com as melhores taxas do mercado</h2><br><br><br>
+    <h3>Entre com dos dados da sua conta</h3>
+    
+    Valor Operação: <input id="input_valor" placeholder="Insira Aqui"><br><br>
+    
+    <select id="operação">
+        <option value="emprestimo">Empréstimo</option>
+        <option value="investimento">Investimento</option>
+    </select>
+    
+    <select id="prazo">
+        <option value="curto">Curto</option>
+        <option value="medio">Médio</option>
+        <option value="longe">Longo</option>
+    </select><br><br>
+    <button onclick="mostrar()">Mostrar Resultado</button><br>
+ </div>
+
+</body>
+</html>
+<script>
+function simular(){
+     var conta = Number (input_conta.value);
+     var digito = Number (input_digito.value);
+     var senha = (input_senha.value);
+     var resto = (conta % 11) ; 
+
+       if(conta == 0 && resto != digito ){
+            alert('Inválido. Digite novamente!'); 
+           }
+       else if(digito >= 0 || digito <= 3 && senha == 'manaus'){
+           tela01.style.display='none';
+           tela02.style.display='block';
+       }
+       else if(digito >=4 || digito <= 7 && senha == 'recife'){
+           tela01.style.display='none';
+           tela02.style.display='block';
+       }
+       else if(digito >=8 || digito <=10 && senha == 'fortaleza'){
+           tela01.style.display='none';
+           tela02.style.display='block';
+       }
+}
+function mostrar(){
+    if(prazo.value == 'curto' || prazo.value == 'medio'){
+        tela02.style.display='none';
+        alert('Esta operação está condicionada ao seu perfil');
+    }
+
+}
+</script>

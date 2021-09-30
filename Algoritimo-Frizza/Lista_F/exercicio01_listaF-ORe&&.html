@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02 or e and</title>
+</head>
+<body>
+    <br><br>
+    Digite sua nota: <input id="input_nota" placeholder="Insira aqui"><br><br>
+    <button onclick="avaliar()">Avaliar Atendimento</button><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function avaliar(){
+    var nota = Number (input_nota.value)
+         if(nota < 0 || nota > 10){
+            mensagem.innerHTML=`Nota inválida`;
+        }
+        else if(nota < 5){
+            mensagem.innerHTML=`Não aprovado`;
+        }
+        else if(nota <= 6){
+            mensagem.innerHTML=`Neutro`;
+        }
+        else if(nota > 6){
+            mensagem.innerHTML=`Aprovado`;
+        }
+    }
+</script>
