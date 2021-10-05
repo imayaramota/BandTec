@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+</head>
+<body>
+    <button onclick="temperatura()">Sortear temperatura</button>
+    <br><br>
+    Temperatura sorteada: <b id="trocar">0</b>. <br>
+    <div id="mensagem"></div><br>
+</body>
+</html>
+<script>
+    function temperatura(){
+       var ax_num = Math.random();
+       var temp = (ax_num * 40 - 20).toFixed();
+       trocar.innerHTML= `${temp}`;
+
+       if(temp < 1){
+        mensagem.innerHTML =`Dá pra conservar qualquer alimento.`;
+
+       }
+      else if(temp < 10){
+        mensagem.innerHTML =`Conserva a maioria dos alimentos.`;
+
+       }
+      else {
+        mensagem.innerHTML =`Estraga a maioria dos alimentos.`;
+       }
+    }
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    <h1>Anasile dos times </h1>
+    <button onclick="sortear()">Sortear Time</button>
+    <br>
+    <div id="mensagem"></div>
+    
+</body>
+</html>
+<script>
+function sortear(){
+    var ax_ran = Math.random();
+    var result = (ax_ran * 3 + 1).toFixed();
+
+    if (result == 1){
+        mensagem.innerHTML =`<img src= "https://img.elo7.com.br/product/original/29BC368/adesivo-escudo-sao-paulo-0-54cm-x-0-40cm.jpg" style="width: 150px;">`;
+    }
+
+    else if (result == 2){
+        mensagem.innerHTML =`<img src= "https://http2.mlstatic.com/D_NQ_NP_659396-MLB31045370256_062019-O.jpg" style="width: 150px;">`;
+    }
+
+    else if (result == 3){
+        mensagem.innerHTML =`<img src= "https://img.elo7.com.br/product/original/2BF496C/matriz-de-bordado-escudo-time-de-futebol-palmeira-maquina-de-bordar.jpg" style="width: 150px;">`;
+    }
+    
+    else{
+        mensagem.innerHTML =`<img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsKnS4AIHjS_do8DHgNImkBA31pA4j8XrK593VYKsOMtCQ2IwqJpxc5YNXCs2ZbXgQv30&usqp=CAU" style="width: 150px;">`;
+    } 
+}
+</script>

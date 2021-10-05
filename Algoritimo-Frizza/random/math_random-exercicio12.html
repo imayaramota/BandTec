@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+</head>
+<body>
+    <button onclick="avaliar()">Avaliar</button>
+    <br><br>
+    <div id="mensagem"></div><br>
+    <button onclick="equipe()">Equipe</button>
+    <br><br>
+    <div id="mensagem_cont"></div><br>
+</body>
+</html>
+<script>
+    var contador = 0;
+    var nota = 0;
+    var result = 0;
+
+    function avaliar(){
+        contador ++;
+
+        nota = (Math.random() * 5 + 0).toFixed(1);
+        result += Number (nota);
+        
+        if(nota  == 0 && nota <= 0.5 ){
+          mensagem.innerHTML=`Nota recebida: ${nota} <br> <br>
+        <img src= "https://i.pinimg.com/564x/e9/dc/15/e9dc151464ee3809b60e9c2ea73aabd8.jpg" style="width: 150px;">`;
+        }
+        else if(nota > 0.5  && nota <= 1.5 ){
+          mensagem.innerHTML=`Nota recebida: ${nota} <br> <br>
+        <img src= "https://psfonttk.com/wp-content/uploads/2020/08/emoji-triste.png" style="width: 150px;">`;
+        }
+        else  if(nota > 1.5  && nota <= 3.5 ){
+          mensagem.innerHTML=`Nota recebida: ${nota} <br> <br>
+        <img src= "https://thumbs.dreamstime.com/b/cara-neutra-amarela-de-emoji-do-vetor-116088061.jpg" style="width: 150px;">`;
+        }
+        else if(nota > 3.5  && nota <= 4.5 ){
+          mensagem.innerHTML=`Nota recebida: ${nota} <br> <br>
+        <img src= "https://cdn.pixabay.com/photo/2017/03/05/21/55/emoticon-2120024_640.png" style="width: 150px;">`;
+        }
+        else{
+          mensagem.innerHTML=`Nota recebida: ${nota} <br> <br>
+        <img src= "https://imagensemoldes.com.br/wp-content/uploads/2018/06/Emoji-Feliz-PNG.png" style="width: 150px;">`;
+        }
+    }
+
+    function equipe(){
+        console.log(result,contador)
+        var media = (result / contador).toFixed(1);
+        
+        mensagem_cont.innerHTML=`Media geral: ${media} <br> <br>`;
+
+        if(media  == 0 && media <= 0.5 ){
+          mensagem_cont.innerHTML +=`<img src= "https://i.pinimg.com/564x/e9/dc/15/e9dc151464ee3809b60e9c2ea73aabd8.jpg" style="width: 150px;">`;
+        }
+        else if(media > 0.5  && media <= 1.5 ){
+          mensagem_cont.innerHTML +=`<img src= "https://psfonttk.com/wp-content/uploads/2020/08/emoji-triste.png" style="width: 150px;">`;
+        }
+        else  if(media > 1.5  && media <= 3.5 ){
+          mensagem_cont.innerHTML +=`<img src= "https://thumbs.dreamstime.com/b/cara-neutra-amarela-de-emoji-do-vetor-116088061.jpg" style="width: 150px;">`;
+        }
+        else if(media > 3.5  && media <= 4.5 ){
+          mensagem_cont.innerHTML +=`<img src= "https://cdn.pixabay.com/photo/2017/03/05/21/55/emoticon-2120024_640.png" style="width: 150px;">`;
+        }
+        else{
+          mensagem_cont.innerHTML +=`<img src= "https://imagensemoldes.com.br/wp-content/uploads/2018/06/Emoji-Feliz-PNG.png" style="width: 150px;">`;
+        }
+    }
+</script>

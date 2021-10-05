@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercico 06 </title>
+</head>
+<body>
+    <button onclick="sortear()">Sortear momento do dia</button>
+    <br><br>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function sortear(){
+        var ax_num = Math.random();
+        var horario = (ax_num * 23 + 0).toFixed();
+
+        if(horario <= 11){
+            mensagem.innerHTML=`Bom dia, flor do dia, são ${horario} !`;
+        }
+        else if(horario <= 17){
+            mensagem.innerHTML=`Boa tarde, já vai tarde! São ${horario} !`;
+        }
+        else{
+            mensagem.innerHTML=`Boa noite, durma bem! São ${horario} !`;
+        }
+    }
+</script>

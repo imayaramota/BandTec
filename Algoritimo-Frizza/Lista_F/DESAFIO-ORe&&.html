@@ -71,11 +71,11 @@ function simular(){
         tela02.style.display='block';
        }
 }
+    var n_simulacao_emprest = 0;
+    var n_simulacao_invest = 0;
 function mostrar(){
     var valor = Number (input_valor.value);
     var juros 
-    var n_simulacao_emprest = 1;
-    var n_simulacao_invest = 1;
 
     if(prazo.value == 'curto' || prazo.value == 'medio'){
         tela02.style.display='none';
@@ -92,8 +92,9 @@ function mostrar(){
         else if (prazo.value == 'longo'){
             juros = (valor * 0.10)
         }
-        mensagem.innerHTML +=`<br> Simulação ${n_simulacao_emprest} – Para o <b>empréstimo</b> de R$ ${valor.toFixed(2)} no ${prazo.value} prazo será cobrado os juros de R$ ${juros.toFixed(2)} ao ano.`;
         n_simulacao_emprest ++;
+        mensagem.innerHTML +=`<br> Simulação ${n_simulacao_emprest} – Para o <b>empréstimo</b> de R$ ${valor.toFixed(2)} no ${prazo.value} prazo será cobrado os juros de R$ ${juros.toFixed(2)} ao ano.`;
+        //empres.innerHTML = n_simulacao_emprest; 
     }
     if(operacao.value == 'investimento'){
         tela02.style.display='none';
@@ -106,7 +107,10 @@ function mostrar(){
         else if (prazo.value == 'longo'){
             juros = (valor * 0.12)
         }
-        mensagem.innerHTML +=`<br> Simulação XX – Para o <b>investimento</b> de R$ ${valor.toFixed(2)} no ${prazo.value} prazo será cobrado os juros de R$ ${juros.toFixed(2)} ao ano.`;
+        n_simulacao_invest ++; 
+        console.log(n_simulacao_invest);
+        mensagem.innerHTML +=`<br> Simulação ${n_simulacao_invest} – Para o <b>investimento</b> de R$ ${valor.toFixed(2)} no ${prazo.value} prazo será cobrado os juros de R$ ${juros.toFixed(2)} ao ano.`;
+        //n_simulacao_invest++;   
     }
     div_button.style.display='block';
 }

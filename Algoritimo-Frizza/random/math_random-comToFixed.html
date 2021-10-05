@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Random</title>
+</head>
+<body>
+    <h1>Anasile os resultados abaixo</h1>
+    <button onclick="executar()">Executar</button>
+    <div id="div_mensagem">Resultado <br></div>
+</body>
+</html>
+<script>
+    function executar(){
+        // o random()sempre fica vazio
+        // cada random faz um sortei aleatorio, se for feito varios sorteios o melhor é uma variavel ou for usar ele em outros lugares
+        var ax_num = Math.random();
+        if(ax_num >= 0.5){
+           // div_mensagem.innerHTML += ` ${Math.random()} numero aleatorio `;
+           div_mensagem.innerHTML += ` Para o numero sorteado ${ax_num} eu arredondaria para 1 e o toFixed arredondou para ${ax_num.toFixed()} <br> `;
+        }
+        else{
+            div_mensagem.innerHTML += ` Para o numero sorteado ${ax_num} eu arredondaria para 0 e o toFixed arredondou para ${ax_num.toFixed()} <br> `;
+        }
+    }
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+</head>
+<body>
+    <button onclick="nota()">Gerar uma nota de aluno entre 3 e 10</button>
+    <button onclick="frequencia()">Gerar uma frequência de aluno entre 50 e 100</button>
+    <br><br>
+    <button onclick="aprovado()">Aprovado?</button>
+    <br><br>
+    <div id="mensagem"></div><br>
+
+</body>
+</html>
+<script>
+    //var ax_num = Math.random();
+    var n 
+    var f 
+
+    function nota(){
+        n = (Math.random() * 7 + 3).toFixed(1);
+        mensagem.innerHTML +=`Nota: ${n} `;
+    }
+    function frequencia(){
+        f = (Math.random() * 50 + 50).toFixed(1);
+        mensagem.innerHTML +=`Frequência: ${f} <br>`;
+    }
+    function aprovado(){
+        if(n >= 6 && f >= 75){
+            alert(`APROVADO! nota ${n} e frequência ${f}`);
+        }
+        else {
+            alert(`REPROVADO! nota ${n} e frequência ${f}`);
+        }
+        
+    }
+</script>
