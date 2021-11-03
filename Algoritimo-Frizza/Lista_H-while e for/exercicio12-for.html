@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio for 12</title>
+</head>
+<body>
+    <h2>Usando for VAMOS CONTAR </h2>
+    Quantas coca-cola você ja bebeu na vida: <input id="quant_coca" type="text" placeholder="Insira aqui"><br><br>
+    <button onclick="executar()">Ver a quantidade</button><br>
+    <span id="mensagem"></span>
+    
+</body>
+</html>
+<script>
+    function executar() {
+        var coca = Number (quant_coca.value);
+        mensagem.innerHTML ='';
+        quant_coca.value ='';
+
+        for (var contador = 1; contador <= coca; contador++) {
+            mensagem.innerHTML += ` <img src= " https://media.cotabest.com.br/media/sku/refrigerante-coca-cola-ks-garrafa-nao-retornavel-250ml-coca-cola-un.webp" width="150" height="150"> `;  
+        }   
+    }  
+</script>

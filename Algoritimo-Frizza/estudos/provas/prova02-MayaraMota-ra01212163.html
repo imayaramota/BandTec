@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcoPip Mayara Mota</title>
+</head>
+<body>
+    <h1>Aco Pip – AS MELHORES PIPOCAS DO BRASIL</h1><br>
+<div id="tela01" style="display: block;">
+    <select  id="sabores">
+        <option value="selecione">Selecione um Produto</option>
+        <option value="Pipoca com caramelo" id="carame">Pipoca com Caramelo</option>
+        <option value="Pipoca com chocolate" id="choco">Pipoca com Chocolate</option>
+    </select>
+    <select  id="tamanho">
+        <option value="selecione">Selecione uma Embalagem</option>
+        <option value="Pacote pequeno" id="p">Pacote Pequeno</option>
+        <option value="Pacote grande" id="g">Pacote Grande</option>
+    </select><br><br>
+
+    Quantidade de pipocas: <input id="ipt_quant_pipoca" placeholder="Insira aqui">
+    Quantidade adicional de açúcar: <input id="ipt_quant_acucar" placeholder="Insira aqui"><br><br>
+    <button onclick="orcamento()">Orçar</button><br><br>
+    <div id="mensagem"></div>
+</div>
+    <!-- <div id="mensagem"></div> -->
+    <div id="tela02" style="display: none;">
+        <span id="mensagem_orcamento"></span>
+        <span id="span_mensagem"></span><br><br>
+        <button onclick="novo_orcamento()">Novo Orçamento</button>
+        <button onclick="comprar()">Comprar</button><br><br>
+        <span id="mensagem_sorteio"></span><br><br>
+    </div>
+
+</body>
+</html>
+<script>
+     var total ;
+    function orcamento(){
+        var quant_pipoca = Number (ipt_quant_pipoca.value);
+        var quant_acucar = Number (ipt_quant_acucar.value);
+
+        if(quant_pipoca < 500){
+            mensagem.innerHTML =`Vendemos somente no atacado!`; 
+            // tela01.style.display='block'; TIREI ESSES BLOCK
+        }
+        else if(quant_pipoca > 5000){
+            mensagem.innerHTML =`Consulte nosso PCP (planejamento e controle da produção.`;
+        }
+
+        else if(quant_acucar < 0 || quant_acucar > 8){
+            mensagem.innerHTML =`Quantidade adicional de açúcar invalida.`; 
+        }
+        
+    else{ /*ARRUMEI COLOQUEI TUDO DENTRO DO ELSE*/
+        // orcamento()
+        tela01.style.display='none'; 
+        tela02.style.display='block';
+
+            if(sabores.value == 'Pipoca com caramelo' &&  tamanho.value == 'Pacote pequeno'){
+            // tela01.style.display='none'; 
+            // tela02.style.display='block';
+            total = (quant_pipoca * 1.10);
+            // mensagem_orcamento.innerHTML =` <b>Resumo do Orçamento</b><br><br><br>
+            //  Quantidade Solicitada: ${quant_pipoca} <br><br>
+            //  Embalagem Selecionada: ${tamanho.value} <br><br>
+            //  Produto Selecionado: ${sabores.value} <br><br><br><br>
+            //  O Valor Total das Pipocas é de R$ ${total.toFixed(2)}`;
+        }
+        if(sabores.value == 'Pipoca com chocolate' && tamanho.value == 'Pacote pequeno'){
+            // tela01.style.display='none'; 
+            // tela02.style.display='block';
+             total = (quant_pipoca * 1.20);
+            // mensagem_orcamento.innerHTML =` <b>Resumo do Orçamento</b><br><br>
+            //  Quantidade Solicitada: ${quant_pipoca} <br><br>
+            //  Embalagem Selecionada: ${tamanho.value} <br><br>
+            //  Produto Selecionado: ${sabores.value} <br><br><br>
+            //  O Valor Total das Pipocas é de R$ ${total.toFixed(2)}`;
+        }
+        if(sabores.value == 'Pipoca com caramelo' && tamanho.value == 'Pacote grande'){
+            // tela01.style.display='none'; 
+            // tela02.style.display='block';
+             total = (quant_pipoca * 1.70);
+            // mensagem_orcamento.innerHTML =` <b>Resumo do Orçamento</b><br><br><br>
+            //  Quantidade Solicitada: ${quant_pipoca} <br><br>
+            //  Embalagem Selecionada: ${tamanho.value} <br><br>
+            //  Produto Selecionado: ${sabores.value} <br><br><br>
+            //  O Valor Total das Pipocas é de R$ ${total.toFixed(2)}`;
+        }
+        if(sabores.value == 'Pipoca com chocolate' && tamanho.value == 'Pacote grande'){
+            // tela01.style.display='none'; 
+            // tela02.style.display='block';
+             total = (quant_pipoca * 1.80);
+            // mensagem_orcamento.innerHTML =` <b>Resumo do Orçamento</b><br><br><br>
+            //  Quantidade Solicitada: ${quant_pipoca} <br><br>
+            //  Embalagem Selecionada: ${tamanho.value} <br><br>
+            //  Produto Selecionado: ${sabores.value} <br><br><br>
+            //  O Valor Total das Pipocas é de R$ ${total.toFixed(2)}`;
+        }
+            mensagem_orcamento.innerHTML =` <b>Resumo do Orçamento</b><br><br><br>
+             Quantidade Solicitada: ${quant_pipoca} <br><br>
+             Embalagem Selecionada: ${tamanho.value} <br><br>
+             Produto Selecionado: ${sabores.value} <br><br><br>
+             O Valor Total das Pipocas é de R$ ${total.toFixed(2)}`;
+    }
+           if(quant_acucar > 4){
+            var adicional = (total * 0.07);
+            span_mensagem.innerHTML=`<br><br>Para essa quantidade adicional de açúcar será cobrado um adicional de R$ ${adicional.toFixed(2)}`;
+           }
+           /*ADICIONEI*/
+           else{
+            span_mensagem.innerHTML='';
+           }
+           
+        ipt_quant_pipoca.value='';
+        ipt_quant_acucar.value='';   
+    }
+    function novo_orcamento(){
+        tela01.style.display='block';
+        tela02.style.display='none';
+        mensagem.style.display='none'; /*ARRUMEI ADICIONANDO*/
+    }
+    function comprar(){
+        var ax_num = Math.random();
+        var sortear = (ax_num * 2 + 3.5 ); 
+        var bonus = (total * ax_num);
+
+        alert(`PARABÉNS!!! Você recebeu um bônus de ${sortear.toFixed(1)} %, na sua próxima compra você terá um bônus de R$ ${bonus.toFixed(2)}`);
+        tela01.style.display='block';
+        tela02.style.display='none';
+    }
+
+</script>

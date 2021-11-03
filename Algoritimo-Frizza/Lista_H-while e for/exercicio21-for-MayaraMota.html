@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercico 21 for</title>
+</head>
+<body>
+    <h2>Vamos analisar sua SORTE!!</h2>
+    Digite seu número da sorte: <input id="input_sorte" type="text" placeholder="Insira aqui"><br><br>
+    <button onclick="analisar()">Valendo!</button><br>
+    <span id="mensagem"></span>
+</body>
+</html>
+<script>
+    function analisar(){
+        var num_sorte = Number(input_sorte.value);
+        mensagem.innerHTML ='';
+        input_sorte.value='';
+
+        if (num_sorte <= 0 || num_sorte > 100){
+            window.alert('Escolha um número entre 1 e 100');  
+        }
+        else{
+            for (var contador = 0 ; contador <= 999 ; contador++){
+            sorteio = (Math.random() * 100).toFixed();
+
+                if (sorteio == num_sorte) {
+                    mensagem.innerHTML +=` Foram necessários ${contador} sorteios <br> `;
+                    break;
+                }
+          
+            }
+        }  
+    }
+</script>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 22 while</title>
+</head>
+<body>
+    <h2>SORTEANDO NÚMEROS</h2>
+    <div id="tela01">
+        Quantidade de números que serão sorteados:<input id="quant_numeros" type="text" placeholder="Insira aqui"><br><br>
+        Qual a divisibilidade deseja encontrar entre esses números:<input id="quant_divisi" type="text" placeholder="Insira aqui"><br><br>
+        <button onclick="sortear()">Sortear</button> <br> 
+    </div>
+    <span id="mensagem"></span>
+    <span id="mensagem02"></span>
+    
+</body>
+</html>
+<script>
+function sortear() {
+        var quant_num = Number (quant_numeros.value);
+        var divisibilidade = Number (quant_divisi.value);
+        var contador = 0;
+
+        var menor = 101;
+        var maior = 0;
+
+        if (quant_num < 10 || quant_num > 50){
+            alert(`A quantidade de números sortedos deve ser entre 10 e 50`);
+            quant_numeros.value ='';
+            quant_divisi.value ='';
+            quant_numeros.focus();
+        }
+        else if (divisibilidade < 1 || divisibilidade > 10){
+            alert(`A divisibilidade de números deve ser entre 1 e 10`);
+            quant_divisi.value ='';
+            quant_divisi.focus();
+        }
+        else{
+            tela01.style.display = 'none'
+
+            cofre = 0; 
+            while(contador < quant_num){
+                sorteio = Number ((Math.random() * 99 + 1).toFixed());
+
+                cofre = cofre + sorteio;
+    
+                if (sorteio % divisibilidade == 0) {
+                    mensagem.innerHTML += `<span style="color:red "> ${sorteio} </span> <br>`;
+                }
+                else{
+                    mensagem.innerHTML += ` ${sorteio} <br> `;
+                }
+                if(sorteio > maior){
+                    maior = sorteio;
+                }
+                if (sorteio < menor) {
+                    menor = sorteio;
+                }
+                contador ++;
+           }
+                    mensagem.innerHTML += `  O maior número sorteado foi:  ${maior} <br> `;
+                    mensagem.innerHTML += `  O menor número sorteado foi:  ${menor} <br> `;
+                    mensagem.innerHTML += `  A média de todos os números sorteados é:  ${cofre / quant_num } <br> `;
+           mensagem.innerHTML += `<br> <button onclick="voltar()">Voltar</button> `;
+        }   
+}
+    function voltar(){
+        mensagem.innerHTML='';
+        quant_numeros.value ='';
+        quant_divisi.value ='';
+        tela01.style.display = 'block'
+    }
+</script>

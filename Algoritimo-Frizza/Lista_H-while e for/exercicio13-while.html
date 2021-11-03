@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 13 while </title>
+</head>
+<body>
+    De quantos em quantos você faz musculação:<input id="quant_usuario" type="text"><br><br>
+    <button onclick="carregar()">Exibir rotina mensal</button> <br><br>
+    <span id="mensagem"></span> 
+</body>
+</html>
+<script>
+    function carregar(){
+        var quant = Number (quant_usuario.value);
+        var contador = 0;
+        mensagem.innerHTML ='';
+        
+    while(contador < 30){
+        if(contador % quant != 0){
+            mensagem.innerHTML += ` Dia ${contador + 1} - Comer, dormir etc <br>`;
+        }
+        else{
+            mensagem.innerHTML += ` Dia ${contador + 1} - <b> Musculação </b> <br>`; 
+        }
+        contador ++;
+    }
+} 
+</script>

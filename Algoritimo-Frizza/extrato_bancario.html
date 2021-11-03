@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrato Bancario</title>
+</head>
+<body>
+    <h2>Extrato Bancario</h2>
+
+<div id="tela01" style="display:block">
+    Nome do cliente: <input id="ipt_nome" type="text" placeholder="Insira aqui"><br><br>
+    Código do banco: <input id="ipt_codigo" type="text" placeholder="Insira aqui"><br><br>
+    Agência: <input id="ipt_agencia" type="text" placeholder="Insira aqui"><br><br>
+    Conta: <input id="ipt_conta" type="text" placeholder="Insira aqui"><br><br>
+    Digito: <input id="ipt_digito" type="text" placeholder="Insira aqui"><br><br>
+
+    <button onclick="analisar()">Vamos lá!</button><br>
+</div>
+
+<div id="tela02" style="display:none">
+
+    <select id="cartao">
+        <option value="debito"> Débito </option>
+        <option value="credito"> Crédito </option>
+    </select><br><br>
+    Data do depósito: <input id="ipt_data" type="text" placeholder="Insira aqui"><br><br>
+    Valor do deposito: <input id="ipt_valor" type="text" placeholder="Insira aqui"><br><br>
+    <button onclick="extrato()">Extrato</button>
+    <button onclick="mudar_conta()">Mudar de conta</button><br><br>
+
+    <span id="mensagem"></span>
+</div>
+
+</body>
+</html>
+<script>
+    var saldo_inicial = 0;
+    function analisar(){
+        var nome = ipt_nome.value;
+        var codigo =  Number (ipt_codigo.value);
+        var agencia = Number (ipt_agencia.value);
+        var conta =   Number (ipt_conta.value);
+        var digito =  Number (ipt_digito.value);
+
+        var ax_resto11 = conta%11;
+        var ax_resto_final = ax_resto11%10;
+
+        if(nome.length < 3){
+            alert('Ops! O nome deve ter no minímo 3 letras.');
+            ipt_nome.value='';
+        }
+        else if (codigo != 001 && codigo != 102 && codigo !=  237 && codigo != 341) {
+            alert('Ops! O código do banco está incorreto.');
+            ipt_codigo.value='';
+        }
+        else if (agencia <= 0 || agencia >= 999) {
+            alert('Ops! O agência do banco está incorreta.');
+            ipt_agencia.value='';
+        }
+        else if (conta <= 0 || conta >= 9999) {
+            alert('Ops! O conta do banco está incorreta.');
+            ipt_conta.value='';
+        }
+        else if ( digito != ax_resto_final ) {
+            alert('Ops! O digito do banco está incorreto.'); 
+            ipt_digito.value=''; 
+        }
+        else{
+            alert(`OLÁ ${nome}! Seja bem-vinda a sua conta bancaria!`);
+            tela01.style.display='none';
+            tela02.style.display='block';
+        }  
+    }      
+        function extrato() {
+            var data = ipt_data.value;
+            var valor_deposito = Number (ipt_valor.value);
+
+            var saldo_final = Number (saldo_inicial) + Number (valor_deposito);
+            saldo_inicial =  saldo_inicial + saldo_inicial;
+        
+            mensagem.innerHTML +=`${data} - Saldo inicial R$ ${saldo_inicial.toFixed(2)}  ${cartao.value} R$ ${valor_deposito.toFixed(2)} Saldo final R$ ${saldo_final.toFixed(2)}`;    
+        }
+
+        function mudar_conta() {
+            tela01.style.display='block';
+            tela02.style.display='none';
+            ipt_nome.value='';
+            ipt_codigo.value='';
+            ipt_agencia.value='';
+            ipt_conta.value='';
+            ipt_digito.value='';
+            mensagem.innerHTML ='';
+        }    
+</script>

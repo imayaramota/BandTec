@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 15 while </title>
+</head>
+<body>
+    Quantidade elefantes:<input id="quant_elefante" type="text"><br><br>
+    <button onclick="carregar()">Atazanar a médium</button> <br>
+     <span id="mensagem"></span>
+</body>
+</html>
+<script>
+function carregar(){
+        var quant = Number (quant_elefante.value);
+        var contador = 1;
+        var palavra = 'incomodam, ';
+
+        mensagem.innerHTML ='';
+        quant_elefante.value ='';
+
+    while(contador < quant){
+        contador ++;
+        palavra += 'incomodam, ';
+        mensagem.innerHTML += ` 1 elefante incomoda muita gente! <br> ${contador} elefante ${palavra} muita gente! <br> <br>`;      
+    }
+}
+</script>

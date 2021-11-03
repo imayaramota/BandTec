@@ -20,7 +20,7 @@ values (3,"carrosel","novela","sbt");
 -- (8,"jornal da manha","jornal","record"),
 -- (9,"jornal nacional","jornal","globo");
 
--- Mayara Mota 1
+-- Mayara Mota  ra:01212163 questão 1
 select * from programa;																		
 
 -- Mayara Mota 2

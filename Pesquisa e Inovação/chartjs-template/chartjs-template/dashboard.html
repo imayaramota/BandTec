@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+  <!--dowloand atraves do src, no caso isso é uma biblioteca exportadada via cdn 
+  colocando assim nao precisa baixar-->
+  <!--BOOTSTRAP tem cdm, muito usado para encontrar bibliotecas-->
+  <!--CDN normalmente coloca no head, pois antes de carregar o html ja carrega a biblioteca-->
+
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <h1>Projeto <span class="highlight">IOT</span> Revolucionário</h1>
+    </div>
+  </div>
+
+  <div class="dash-container">
+    <div class="graph">
+      <div class="box red">
+        <h1>00°</h1>
+        <h3>STATUS</h3>
+        <p>Descrição do status</p>
+      </div>
+      <div class="box yellow">
+        <h1>00°</h1>
+        <h3>STATUS</h3>
+        <p>Descrição do status</p>
+      </div>
+      <div class="box green">
+        <h1>00°</h1>
+        <h3>STATUS</h3>
+        <p>Descrição do status</p>
+      </div>
+    </div>
+    <div class="graph">
+      <canvas id="myChartLine" width="100%" height="40%"></canvas> <!--<canvas>usado para fazer desenhos-->
+    </div>
+    <div class="graph">
+      <canvas id="myChartBar" width="100%" height="40%"></canvas> <!--<canvas>usado para fazer desenhos-->
+    </div>
+    <div class="graph">
+      <canvas id="myChartPie" width="100%" height="40%"></canvas> <!--<canvas>usado para fazer desenhos-->
+    </div>
+  </div>
+</body>
+</html>
+<script>
+  var ctx = document.getElementById('myChartLine').getContext('2d'); /*pega o elemento com id myChart*/
+  var myChartLine = new Chart(ctx, { /*pegeui  um novo grafico*/
+      type: 'line', 
+      data: {
+          labels: ['7:00', '10:00', '13:00', '16:00', '19:00', '22:00'], /*legendas do grafico*/
+          datasets: [{
+              label: 'Temperatuda Diaria', /*titulo*/
+              data: [12, 19, 3, 5, 2, 3], /*inseri aqui os numeros do nosso alerts */ /*isso é um vetor =  lugar aonde tem varias variavies*/
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)', /*r=red, g=green, b=blue, a=opacidade */
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)', /*r=red, g=green, b=blue, a=opacidade */
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+        maintainAspectRatio: false, /*isso diz para ele alterar so o width ou so o height, se ficar true ele altera os dois*/
+          scales: {
+              y: {
+                  beginAtZero: true /*grafico começa do zero*/
+              }
+          }
+      }
+  });
+
+  var ctx = document.getElementById('myChartBar').getContext('2d'); /*pega o elemento com id Bar*/
+  var myChartBar = new Chart(ctx, { /*pegeui  um novo grafico*/
+      type: 'bar', /*tipo barra*/
+      data: {
+          labels: ['colisa', 'tetra', 'coridora', 'molinesia', 'arco-iris', 'betta'], /*legendas do grafico*/
+          datasets: [{
+              label: 'Quantidade Espécies', /*titulo*/
+              data: [12, 19, 3, 5, 2, 3], /*inseri aqui os numeros do nosso alerts */ /*isso é um vetor =  lugar aonde tem varias variavies*/
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)', /*r=red, g=green, b=blue, a=opacidade */
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)', /*r=red, g=green, b=blue, a=opacidade */
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+        maintainAspectRatio: false, /*isso diz para ele alterar so o width ou so o height, se ficar true ele altera os dois*/
+          scales: {
+              y: {
+                  beginAtZero: true /*grafico começa do zero*/
+              }
+          }
+      }
+  });
+
+  var ctx = document.getElementById('myChartPie').getContext('2d'); /*pega o elemento com id Bar*/
+  var myChartPie = new Chart(ctx, { /*pegeui  um novo grafico*/
+      type: 'pie', 
+      data: {
+          labels: ['jovem', 'adulto', 'idoso'], /*legendas do grafico*/
+          datasets: [{
+              // label: '# of Votes oii titulo', /*titulo não tem no pie o tipo vira a legenda*/
+              data: [12, 19, 3], /*inseri aqui os numeros do nosso alerts */ /*isso é um vetor =  lugar aonde tem varias variavies*/
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)', /*r=red, g=green, b=blue, a=opacidade */
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)', /*r=red, g=green, b=blue, a=opacidade */
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+        maintainAspectRatio: false, /*isso diz para ele alterar so o width ou so o height, se ficar true ele altera os dois*/
+          scales: {
+              y: {
+                  beginAtZero: true /*grafico começa do zero*/
+              }
+          }
+      }
+  });
+  </script>

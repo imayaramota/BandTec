@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 20 while</title>
+</head>
+<body>
+    <h2>Vamos sortear uns numeros? E ver qual É TRI E PENTA!</h2>
+    <button onclick="executar()">Curto 3 e 5!</button><br>
+    <span id="mensagem"></span>
+    
+</body>
+</html>
+<script>
+function executar(){
+        var contador = 0;
+
+        mensagem.innerHTML ='';
+
+    while(contador < 100){
+        sorteio = (Math.random() * 100).toFixed();
+        mensagem.innerHTML += ` ${sorteio} <br> `;
+            if (sorteio % 3 == 0 && sorteio % 5 == 0) {
+                mensagem.innerHTML += ` É TRI!É PENTA! <br> `;
+            }
+            else if (sorteio % 3 == 0) {
+                mensagem.innerHTML += ` É TRI! <br> `;
+            }
+            else if (sorteio % 5 == 0) {
+                mensagem.innerHTML += ` É PENTA! <br> `;
+            }
+            contador ++;
+    }
+           
+}
+</script>

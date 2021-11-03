@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While 01</title>
+</head>
+<body> 
+    <br>
+     Qual número você quer terminar seu contador:<input id="termino_usuario" type="text"><br><br>
+     <button onclick="conte()">Conte para mim</button><br>
+     <span id="mensagem"></span>
+</body>
+</html>
+<script>
+    var ax_contador = 0;
+    // var contador = 4;
+
+    // while (ax_contador < 15){
+    //     ax_contador ++;
+    //     mensagem.innerHTML += ` ${ax_contador} <br>`;
+    // }
+
+    function conte(){
+        var contador = 4;
+        var termino = Number (termino_usuario.value);
+        mensagem.innerHTML ='';
+
+        while (contador < termino){
+        contador ++;
+        mensagem.innerHTML += ` ${contador} <br>`;
+        }
+    }
+</script>

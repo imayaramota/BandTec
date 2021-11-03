@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO FRIZZA</title>
+</head>
+<body>
+<div id="tela01" style="display: block;">
+    <h1>Seja Bem-Vindo ao Banco KNAB</h1><br><br><br>
+    <h2>Simulação de Emprestimos e Investimentos</h2><br><br><br>
+    <h3>Entre com dos dados da sua conta</h3>
+    <input id="input_conta" placeholder="Conta">
+    <input id="input_digito" placeholder="Digito">
+    <input id="input_senha" placeholder="Senha">
+    <button onclick="simular()">Simular</button><br>
+</div>
+
+  <div id="tela02" style="display: none;">
+    <h1>Seja Bem-Vindo ao Banco KNAB é a sua MELHOR OPÇÃO</h1><br><br><br>
+    <h2>Simulação de Emprestimos e Investimentos com as melhores taxas do mercado</h2><br><br><br>
+    <h3>Entre com dos dados da sua conta</h3>
+    
+    Valor Operação: <input id="input_valor" placeholder="Insira Aqui"><br><br>
+    
+    <select id="operacao">
+        <option value="emprestimo">Empréstimo</option>
+        <option value="investimento">Investimento</option>
+    </select>
+    
+    <select id="prazo">
+        <option value="curto">Curto</option>
+        <option value="medio">Médio</option>
+        <option value="longo">Longo</option>
+    </select><br><br>
+    <button onclick="mostrar()">Mostrar Resultado</button><br>
+ </div>
+ <div id="mensagem"></div>
+ <div id="div_button" style="display: none;"><br><br><button onclick="voltar()">Voltar a Simulação</button></div>
+ 
+</body>
+</html>
+<script>
+function simular(){
+     var conta = Number (input_conta.value);
+     var digito = Number (input_digito.value);
+     var senha = (input_senha.value);
+     var resto = (conta % 11) ; 
+     var valido = 1
+
+       if(conta == 0 && resto != digito ){
+            alert('Inválido. Digite novamente!');
+            valido = 0; 
+        }
+       else if(digito >= 0 && digito <= 3 && senha == 'manaus'){
+           valido = 1;
+       }
+       else if(digito >=4 && digito <= 7 && senha == 'recife'){
+           valido = 1
+       }
+       else if(digito >=8 && digito <=10 && senha == 'fortaleza'){
+           valido = 1;
+       }
+       else{
+           alert('Invalidado! Digite novamente!');
+           valido = 0;
+       }
+       if (valido == 1){
+        tela01.style.display='none';
+        tela02.style.display='block';
+       }
+}
+    var n_simulacao_emprest = 0;
+    var n_simulacao_invest = 0;
+function mostrar(){
+    var valor = Number (input_valor.value);
+    var juros 
+
+    if(prazo.value == 'curto' || prazo.value == 'medio'){
+        tela02.style.display='none';
+        alert('Esta operação está condicionada ao seu perfil');
+    }
+    if(operacao.value == 'emprestimo'){
+        tela02.style.display='none';
+        if (prazo.value == 'curto') {
+            juros = (valor * 0.24)
+        }
+        else if (prazo.value == 'medio'){
+            juros = (valor * 0.16)
+        }
+        else if (prazo.value == 'longo'){
+            juros = (valor * 0.10)
+        }
+        n_simulacao_emprest ++;
+        mensagem.innerHTML +=`<br> Simulação ${n_simulacao_emprest} – Para o <b>empréstimo</b> de R$ ${valor.toFixed(2)} no ${prazo.value} prazo será cobrado os juros de R$ ${juros.toFixed(2)} ao ano.`;
+        //empres.innerHTML = n_simulacao_emprest; 
+    }
+    if(operacao.value == 'investimento'){
+        tela02.style.display='none';
+        if (prazo.value == 'curto') {
+            juros = (valor * 0.05)
+        }
+        else if (prazo.value == 'medio'){
+            juros = (valor * 0.08)
+        }
+        else if (prazo.value == 'longo'){
+            juros = (valor * 0.12)
+        }
+        n_simulacao_invest ++; 
+        console.log(n_simulacao_invest);
+        mensagem.innerHTML +=`<br> Simulação ${n_simulacao_invest} – Para o <b>investimento</b> de R$ ${valor.toFixed(2)} no ${prazo.value} prazo será cobrado os juros de R$ ${juros.toFixed(2)} ao ano.`;
+        //n_simulacao_invest++;   
+    }
+    div_button.style.display='block';
+}
+function voltar(){
+    tela02.style.display='block';
+    div_button.style.display='none';
+}
+</script>

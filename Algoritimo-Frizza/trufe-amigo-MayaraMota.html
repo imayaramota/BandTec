@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turfe Amigo</title>
+</head>
+<body>
+    <h2 style="color: #CC6600">Turfe Amigo</h2>
+    <button onclick="largada()">Dar a Largada</button><br><br>
+    <span id="mensagem"></span>
+    
+</body>
+</html>
+<script>
+function largada() {
+        var contador1 = 0;
+        var contador2 = 0;
+
+
+        cavalo1 = (Math.random() * 2 + 7).toFixed(1); cavalo1_2 = (Math.random() * 2 + 7).toFixed(1);
+        cavalo2 = (Math.random() * 2 + 7).toFixed(1); cavalo2_2 = (Math.random() * 2 + 7).toFixed(1);
+        cavalo3 = (Math.random() * 2 + 7).toFixed(1); cavalo3_2 = (Math.random() * 2 + 7).toFixed(1);
+        cavalo4 = (Math.random() * 2 + 7).toFixed(1); cavalo4_2 = (Math.random() * 2 + 7).toFixed(1);
+
+        cavalo1_3 = (Math.random() * 2 + 7).toFixed(1); cavalo1_4 = (Math.random() * 2 + 7).toFixed(1);
+        cavalo2_3 = (Math.random() * 2 + 7).toFixed(1); cavalo2_4 = (Math.random() * 2 + 7).toFixed(1);
+        cavalo3_3 = (Math.random() * 2 + 7).toFixed(1); cavalo3_4 = (Math.random() * 2 + 7).toFixed(1);
+        cavalo4_3 = (Math.random() * 2 + 7).toFixed(1); cavalo4_4 = (Math.random() * 2 + 7).toFixed(1);
+
+        cavalo1_5 = (Math.random() * 2 + 7).toFixed(1); cavalo1_6 = (Math.random() * 2 + 7).toFixed(1);
+        cavalo2_5 = (Math.random() * 2 + 7).toFixed(1); cavalo2_6 = (Math.random() * 2 + 7).toFixed(1);
+        cavalo3_5 = (Math.random() * 2 + 7).toFixed(1); cavalo3_6 = (Math.random() * 2 + 7).toFixed(1);
+        cavalo4_5 = (Math.random() * 2 + 7).toFixed(1); cavalo4_6 = (Math.random() * 2 + 7).toFixed(1);
+
+        cavalo1_7 = (Math.random() * 2 + 7).toFixed(1); 
+        cavalo2_7 = (Math.random() * 2 + 7).toFixed(1); 
+        cavalo3_7 = (Math.random() * 2 + 7).toFixed(1); 
+        cavalo4_7 = (Math.random() * 2 + 7).toFixed(1); 
+
+
+        /*result volta 02*/
+        var result1_2 = (Number (cavalo1) + Number (cavalo1_2) ).toFixed(1);
+        var result2_2 = (Number (cavalo2) + Number (cavalo2_2) ).toFixed(1);
+        var result3_2 = (Number (cavalo3) + Number (cavalo3_2) ).toFixed(1);
+        var result4_2 = (Number (cavalo4) + Number (cavalo4_2) ).toFixed(1);
+
+        /*result volta 03*/
+        var result1_3 = (Number (result1_2) + Number (cavalo1_3) ).toFixed(1);
+        var result2_3 = (Number (result2_2) + Number (cavalo2_3) ).toFixed(1);
+        var result3_3 = (Number (result3_2) + Number (cavalo3_3) ).toFixed(1);
+        var result4_3 = (Number (result4_2) + Number (cavalo4_3) ).toFixed(1);
+
+        /*result volta 04*/
+        var result1_4 = (Number (result1_3) + Number (cavalo1_4) ).toFixed(1);
+        var result2_4 = (Number (result2_3) + Number (cavalo2_4) ).toFixed(1);
+        var result3_4 = (Number (result3_3) + Number (cavalo3_4) ).toFixed(1);
+        var result4_4 = (Number (result4_3) + Number (cavalo4_4) ).toFixed(1);
+
+        /*result volta 05*/
+        var result1_5 = (Number (result1_4) + Number (cavalo1_5) ).toFixed(1);
+        var result2_5 = (Number (result2_4) + Number (cavalo2_5) ).toFixed(1);
+        var result3_5 = (Number (result3_4) + Number (cavalo3_5) ).toFixed(1);
+        var result4_5 = (Number (result4_4) + Number (cavalo4_5) ).toFixed(1);
+
+        /*result volta 06*/
+        var result1_6 = (Number (result1_5) + Number (cavalo1_6) ).toFixed(1);
+        var result2_6 = (Number (result2_5) + Number (cavalo2_6) ).toFixed(1);
+        var result3_6 = (Number (result3_5) + Number (cavalo3_6) ).toFixed(1);
+        var result4_6 = (Number (result4_5) + Number (cavalo4_6) ).toFixed(1);
+
+        /*result volta 07*/
+        var result1_7 = (Number (result1_6) + Number (cavalo1_7) ).toFixed(1);
+        var result2_7 = (Number (result2_6) + Number (cavalo2_7) ).toFixed(1);
+        var result3_7 = (Number (result3_6) + Number (cavalo3_7) ).toFixed(1);
+        var result4_7 = (Number (result4_6) + Number (cavalo4_7) ).toFixed(1);
+
+
+
+    while (contador1 < 7) {
+    
+      /* volta 01 */
+      mensagem.innerHTML = ` <u style="color: #CC6600"> Volta 01 </u> <br> 
+      <span style="color: #CC6600"> Cavalo01 – ${cavalo1} – ${cavalo1} – Cavalo02 – ${cavalo2} – ${cavalo2} - Cavalo03 – ${cavalo3} – ${cavalo3} – Cavalo04 – ${cavalo4} – ${cavalo4} <span> <br>`;
+      
+      /* volta 02 */
+      mensagem.innerHTML += `<br> <u style="color: #CC6600"> Volta 02 </u> <br> 
+      <span style="color: #CC6600"> Cavalo01 – ${cavalo1_2} – ${result1_2} – Cavalo02 – ${cavalo2_2} – ${result2_2} - Cavalo03 – ${cavalo3_2} – ${result3_2} – Cavalo04 – ${cavalo4_2} – ${result4_2} <span> <br>`;
+      
+      /* volta 03 */
+      mensagem.innerHTML += `<br> <u style="color: #CC6600"> Volta 03 </u> <br> 
+      <span style="color: #CC6600"> Cavalo01 – ${cavalo1_3} – ${result1_3} – Cavalo02 – ${cavalo2_3} – ${result2_3} - Cavalo03 – ${cavalo3_3} – ${result3_3} – Cavalo04 – ${cavalo4_3} – ${result4_3} <span> <br>`;
+       
+      /* volta 04 */
+      mensagem.innerHTML += `<br> <u style="color: #CC6600"> Volta 04 </u> <br> 
+      <span style="color: #CC6600"> Cavalo01 – ${cavalo1_4} – ${result1_4} – Cavalo02 – ${cavalo2_4} – ${result2_4} - Cavalo03 – ${cavalo3_4} – ${result3_4} – Cavalo04 – ${cavalo4_4} – ${result4_4} <span> <br>`;
+    
+      /* volta 05 */
+      mensagem.innerHTML += `<br> <u style="color: #CC6600"> Volta 05 </u> <br> 
+      <span style="color: #CC6600"> Cavalo01 – ${cavalo1_5} – ${result1_5} – Cavalo02 – ${cavalo2_5} – ${result2_5} - Cavalo03 – ${cavalo3_5} – ${result3_5} – Cavalo04 – ${cavalo4_5} – ${result4_5} <span> <br>`;
+        
+      /* volta 06 */
+      mensagem.innerHTML += `<br> <u style="color: #CC6600"> Volta 06 </u> <br> 
+      <span style="color: #CC6600"> Cavalo01 – ${cavalo1_6} – ${result1_6} – Cavalo02 – ${cavalo2_6} – ${result2_6} - Cavalo03 – ${cavalo3_6} – ${result3_6} – Cavalo04 – ${cavalo4_6} – ${result4_6} <span> <br>`;
+      
+      /* volta 07 */
+      mensagem.innerHTML += `<br> <u style="color: #CC6600"> Volta 07 </u> <br> 
+      <span style="color: #CC6600"> Cavalo01 – ${cavalo1_7} – ${result1_7} – Cavalo02 – ${cavalo2_7} – ${result2_7} - Cavalo03 – ${cavalo3_7} – ${result3_7} – Cavalo04 – ${cavalo4_7} – ${result4_7} <span> <br> <br>`;
+        contador1 ++;
+    } 
+        
+        console.log(result1_7, result2_7, result3_7, result4_7)
+
+        if (result1_7 < result2_7 && result1_7 < result3_7 && result1_7 < result4_7 ) {
+            mensagem.innerHTML += ` Em 1º Lugar – Cavalo01 <br> `;
+
+            if (result2_7 < result3_7 && result2_7 < result4_7 ){
+            mensagem.innerHTML += ` Em 2º Lugar – Cavalo02 <br> `;
+                
+                if( result3_7 < result4_7 ){
+                    mensagem.innerHTML += ` Em 3º Lugar – Cavalo03 <br> `;
+                }
+                else{
+                    mensagem.innerHTML += ` Em 4º Lugar – Cavalo04 <br< `;
+                } 
+            }
+
+            if (result3_7 < result2_7 && result3_7 < result4_7 ){
+            mensagem.innerHTML += ` Em 2º Lugar – Cavalo03 <br> `;
+                if( result2_7 < result4_7 ){
+                    mensagem.innerHTML += ` Em 3º Lugar – Cavalo02 <br> `;
+                }
+                if( result4_7 > result2_7 ){
+                    mensagem.innerHTML += ` Em 4º Lugar – Cavalo04 <br> `;
+                } 
+            }
+
+            if (result4_7 < result2_7 && result4_7 < result3_7 ){
+            mensagem.innerHTML += ` Em 2º Lugar – Cavalo04 <br> `;
+                if( result2_7 < result3_7 ){
+                    mensagem.innerHTML += ` Em 3º Lugar – Cavalo02 <br> `;
+                }
+                if( result3_7 > result2_7 ){
+                    mensagem.innerHTML += ` Em 4º Lugar – Cavalo03 <br> `;
+                }  
+            }
+
+        }
+
+
+        else if (result2_7 < result1_7 && result2_7 < result3_7 && result2_7 < result4_7){
+            mensagem.innerHTML += ` Em 1º Lugar – Cavalo02 <br> `;    
+            
+            if (result1_7 < result3_7 && result1_7 < result4_7 ){
+            mensagem.innerHTML += ` Em 2º Lugar – Cavalo01 <br> `; 
+            }
+            if (result3_7 < result1_7 && result3_7 < result4_7 ){
+            mensagem.innerHTML += ` Em 2º Lugar – Cavalo03 <br> `; 
+            }
+            if (result4_7 < result1_7 && result4_7 < result3_7 ){
+            mensagem.innerHTML += ` Em 2º Lugar – Cavalo04 <br> `; 
+            }
+
+        }
+
+
+        else if (result3_7 < result1_7 && result3_7 < result2_7 && result3_7 < result4_7){
+            mensagem.innerHTML += ` Em 1º Lugar – Cavalo03 <br> `;
+            
+            if (result1_7 < result2_7 && result1_7 < result4_7 ){
+            mensagem.innerHTML += ` Em 2º Lugar – Cavalo01 <br> `; 
+            }
+            if (result2_7 < result1_7 && result2_7 < result4_7 ){
+            mensagem.innerHTML += ` Em 2º Lugar – Cavalo02 <br> `; 
+            }
+            if (result4_7 < result1_7 && result4_7 < result2_7 ){
+            mensagem.innerHTML += ` Em 2º Lugar – Cavalo04 <br> `; 
+            }
+
+        }
+
+        else if (result4_7 < result1_7 && result4_7 < result2_7 && result4_7 < result3_7){
+            mensagem.innerHTML += ` Em 1º Lugar – Cavalo04 <br> `; 
+
+            if (result1_7 < result2_7 && result1_7 < result3_7 ){
+            mensagem.innerHTML += ` Em 2º Lugar – Cavalo01 <br> `; 
+            }
+            if (result2_7 < result1_7 && result2_7 < result3_7 ){
+            mensagem.innerHTML += ` Em 2º Lugar – Cavalo02 <br> `; 
+            }
+            if (result3_7 < result1_7 && result3_7 < result2_7 ){
+            mensagem.innerHTML += ` Em 2º Lugar – Cavalo03 <br> `; 
+            }
+
+        }   
+    }
+</script>

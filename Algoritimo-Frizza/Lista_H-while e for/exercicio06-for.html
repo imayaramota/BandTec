@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio for 06</title>
+</head>
+<body>
+    <h2>Venha ver o Papagaio!! </h2>
+    Insira um número:<input id="quant_numero" type="text" placeholder="Insira aqui"><br><br>
+    Insira uma frase:<input id="frase" type="text" placeholder="Insira aqui"><br><br>
+    <button onclick="executar()">Papagaio</button><br>
+    
+</body>
+</html>
+<script>
+    function executar() {
+        var numero = Number (quant_numero.value);
+        quant_numero.value ='';
+
+        for (var contador = 1; contador <= numero; contador++) {
+        alert(` ${frase.value} `);  
+        }   
+    }
+    
+</script>

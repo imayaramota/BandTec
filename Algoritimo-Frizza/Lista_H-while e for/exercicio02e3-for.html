@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio for 02 e 03 </title>
+</head>
+<body>
+    <h2>Usando for VAMOS CONTAR </h2>
+    <button onclick="executar()">Diga algo sobre a quarentena</button><br>
+    <span id="mensagem"></span>
+    
+    
+</body>
+</html>
+<script>
+    function executar() {
+        mensagem.innerHTML ='';
+        for (var contador = 1; contador <= 7; contador++) {
+        mensagem.innerHTML += ` ${contador} . a quarentena foi uma belezura <br> `;  
+        }   
+    }
+    
+</script>

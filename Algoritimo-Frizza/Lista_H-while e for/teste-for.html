@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste for</title>
+</head>
+<body>
+    <h2>Usando for VAMOS CONTAR </h2>
+    Insira qual número deseja começar contar:<input id="quant_comecar" type="text" placeholder="Insira aqui"><br><br>
+    Insira o até qual número deseja contar:<input id="quant_terminar" type="text" placeholder="Insira aqui"><br><br>
+    Qual a divisibilidade deseja encontrar entre esses números:<input id="quant_divisi" type="text" placeholder="Insira aqui"><br><br>
+    <button onclick="executar()">Vamos!</button><br>
+    <span id="mensagem"></span>
+    
+    
+</body>
+</html>
+<script>
+    function executar() {
+        var começar = Number (quant_comecar.value);
+        var terminar = Number (quant_terminar.value);
+        var divisibilidade = Number (quant_divisi.value);
+        mensagem.innerHTML ='';
+        quant_comecar.value ='';
+        quant_terminar.value ='';
+        quant_divisi.value ='';
+
+        // FAZER EM ORDEM DESCRECENTE, troquei o começar e o terminar
+        for (var contador = terminar ; contador >= começar ; contador--) {
+                if (contador % divisibilidade == 0) {
+                    mensagem.innerHTML += `<span style="color:red "> ${contador} apenas os divisiveis</span> <br>`;
+                }  
+        }  
+        // for (var contador = 5; contador <= 15; contador++) {
+        // mensagem.innerHTML += ` ${contador} <br> `;  
+        // }   
+    }
+    
+</script>

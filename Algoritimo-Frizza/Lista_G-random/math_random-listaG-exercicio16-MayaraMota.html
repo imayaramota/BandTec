@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 16 lista G</title>
+</head>
+<body>
+    
+<input id="ipt_nome" type="text" placeholder="Digite seu nome">
+<input id="ipt_sorte1" type="text" placeholder="Digite seu 1º numero da sorte">
+<input id="ipt_sorte2" type="text" placeholder="Digite seu 2º numero da sorte">
+<input id="ipt_sorte3" type="text" placeholder="Digite seu 3º numero da sorte">
+<button onclick="sortear()">Sortear</button>
+<br><br>
+<div id="div_msg"></div>
+<br> <br>
+Numero sorteado: <div id="div_msg2"></div>
+</body>
+</html>
+
+<script>
+    var sorteio = 0;
+    function sortear() {
+        
+        var sorte1 = ipt_sorte1.value;
+        var sorte2 = ipt_sorte2.value;
+        var sorte3 = ipt_sorte3.value;
+        var menor1 = sorte1 >= 1;
+        var menor2 = sorte2 >= 1;
+        var menor3 = sorte3 >= 1;
+        var maior1 = sorte1 <= 10;
+        var maior2 = sorte2 <= 10;
+        var maior3 = sorte3 <= 10;
+        var numero = menor1 && maior1 && menor2 && maior2 && menor3 && maior3;
+    
+        if (numero == true) {
+            var sorteado = (Math.random() * 9 + 1).toFixed();
+            sorteio = sorteio + 1;
+            div_msg2.innerHTML= sorteado;
+            if (sorte1 == sorteado || sorte2 == sorteado || sorte3 == sorteado) {
+                if (sorte1 == sorteado) {
+                div_msg.innerHTML= `Parabéns, ${ipt_nome.value} o seu número da sorte ${sorte1} foi sorteado após ${sorteio} sorteios!`;
+                } else if (sorte2 == sorteado) {
+                div_msg.innerHTML= `Parabéns, ${ipt_nome.value} o seu número da sorte ${sorte2} foi sorteado após ${sorteio} sorteios!`;
+                } else if (sorte3 == sorteado) {
+                div_msg.innerHTML= `Parabéns, ${ipt_nome.value} o seu número da sorte ${sorte3} foi sorteado após ${sorteio} sorteios!`;
+                }
+                }
+        } else if (numero == false){
+            alert ('Número inválido! insira um número entre 1 e 10')
+        }
+    }
+</script>

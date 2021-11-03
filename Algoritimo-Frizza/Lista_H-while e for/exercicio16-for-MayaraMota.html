@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio for 14, 15 e 16 </title>
+</head>
+<body>
+    <h2>banco </h2>
+    Quantos depósitos você fez no banco: <input id="quant_depositos" type="text" placeholder="Insira aqui"><br><br>
+    Insira o valor depositado: <input id="valor_depositos" type="text" placeholder="Insira aqui"><br><br>
+    <button onclick="executar()">Acompanhar grana</button><br>
+    <span id="mensagem"></span>
+    
+    
+</body>
+</html>
+<script>
+function executar() {
+        var quantidade = Number (quant_depositos.value);
+        var valor = Number (valor_depositos.value);
+        mensagem.innerHTML ='';
+        quant_depositos.value ='';
+        valor_depositos.value ='';
+
+        cofre = 0;
+
+        if(quantidade < 3 || quantidade > 24){
+            alert(` A quantidade inicial deve estar entre 3 e 24 `); 
+        }
+        
+        else if(valor < 1000){
+            alert(` A quantidade inicial deve iniciar em 1000.00`); 
+        }
+        else{
+            for (var contador = 1 ; contador <= quantidade ; contador++) {
+                cofre = (cofre + valor); // igual á cofre+= valor;
+
+                if(contador % 3 == 0 ){
+                    cofre = cofre + cofre * 0.01;
+                    mensagem.innerHTML += `${contador} º mês: ${cofre.toFixed(2)} <img src= " https://www.laserfe.com.br/wp-content/uploads/2020/06/aplique-em-acrilico-espelhado-dourado-estrela-branco.jpg" width="20px" height="20px"> <br>`; 
+                }
+                else{
+                    mensagem.innerHTML += `${contador} º mês: ${cofre.toFixed(2)} <br>`; 
+                }          
+           } 
+        }   
+        mensagem.innerHTML += ` Total guardado: ${cofre.toFixed(2)} <br> `;
+}
+</script>

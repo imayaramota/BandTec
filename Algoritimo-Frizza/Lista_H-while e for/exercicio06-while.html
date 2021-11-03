@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06 while</title>
+</head>
+<body>
+    Nome da pessoa que o usuário mais ama na vida:<input id="nome_usuario" type="text"><br><br>
+    O quanto você a ama (um número inteiro):<input id="amor_usuario" type="text"><br><br>
+    <button onclick=" expressar ()">Expressar amor</button> <br>
+     <span id="mensagem"></span>
+</body>
+</html>
+<script>
+
+    function expressar(){
+            var nome = (nome_usuario.value);
+            var vezes_amor = Number (amor_usuario.value);  
+            var contador = 0 ;
+    
+            mensagem.innerHTML ='';
+            nome_usuario.value ='';
+            amor_usuario.value ='';
+
+        while (contador < vezes_amor){
+        contador ++;
+        mensagem.innerHTML += ` <b> ${nome} </b> , eu te amo! Sempre lembre disso! <br>`;
+        }
+    }
+    </script>

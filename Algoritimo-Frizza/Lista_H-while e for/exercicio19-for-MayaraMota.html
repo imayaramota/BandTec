@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercico 19 for</title>
+</head>
+<body>
+    <h2>Vamos analisar sua trajetória</h2>
+    Digite sua idade: <input id="input_idade" type="text" placeholder="Insira aqui"><br><br>
+    <button onclick="analisar()">Analisar</button><br>
+    <span id="mensagem"></span>
+</body>
+</html>
+<script>
+    function analisar(){
+        var idade = Number(input_idade.value);
+        mensagem.innerHTML ='';
+        input_idade.value='';
+
+        for (var contador = 0 ; contador <= idade ; contador++){
+            
+            if (contador >= 0 && contador <= 4) {
+                mensagem.innerHTML +=`${contador} anos (Primeira Infância)<br>`;   
+            }
+            else if (contador >= 5 && contador <= 6) {
+                mensagem.innerHTML +=`${contador} anos (Pré-escolar)<br>`;  
+            }
+            else if (contador > 6 && contador <= 10) {
+                mensagem.innerHTML +=`${contador} anos (Segunda Infância)<br>`;   
+            }
+            else if (contador > 10 && contador <= 18) {
+                mensagem.innerHTML +=`${contador} anos (Adolescência)<br>`;  
+            }
+            else if (contador > 18 && contador <= 50) {
+                mensagem.innerHTML +=`${contador} anos (Adulto)<br>`;  
+            }
+            else if (contador > 50 && contador <= 100) {
+                mensagem.innerHTML +=`${contador} anos (Melhor idade)<br>`;  
+            }
+            else{
+                mensagem.innerHTML +=`${contador} anos (Matusalém)<br>`;   
+            }
+        }  
+    }
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 18 com 19 while</title>
+</head>
+<body>
+    <h2>Simulador de Trajeto</h2>
+    Quantidade ônibus que você precisa pegar:<input id="quant_onibus" type="text" placeholder="Insira aqui"><br><br>
+    Quantidade trens que você precisa pegar:<input id="quant_trens" type="text" placeholder="Insira aqui"><br><br>
+    Quantidade metrôs  que você precisa pegar:<input id="quant_metros" type="text" placeholder="Insira aqui"><br><br>
+    <button onclick="carregar()">#Partiu Trajeto</button> <br> 
+     <span id="mensagem"></span>
+</body>
+</html>
+<script>
+    function carregar(){
+            var onibus = Number (quant_onibus.value);
+            var trem = Number (quant_trens.value);
+            var metro = Number (quant_metros.value);
+            var contador_onibus = 0;
+            var contador_trem = 0;
+            var contador_metro = 0;
+           
+            mensagem.innerHTML ='';
+            quant_onibus.value ='';
+            quant_trens.value ='';
+            quant_metros.value ='';
+
+            while(contador_onibus < onibus){
+                contador_onibus ++ ;
+                mensagem.innerHTML +=` <br><br> <span style="color:red "> Pegando o ${contador_onibus} º buzão </span>  `;
+
+                if(contador_onibus == 2){
+                    mensagem.innerHTML +=`<b> -Começando a cansar</b>`;
+                }
+                if(contador_onibus > 2){
+                    mensagem.innerHTML +=`<b>- Já está cansado!</b>`;
+                }
+
+            }
+            while(contador_trem < trem){
+                contador_trem ++ ;
+                mensagem.innerHTML +=` <br><br> <span style="color:green "> Pegando o ${contador_trem} º trem </span>`;
+                if(contador_trem == 2){
+                    mensagem.innerHTML +=`<b>- Começando a cansar</b>`;
+                }
+                if(contador_trem > 2){
+                    mensagem.innerHTML +=`<b>- Já está cansado!</b>`;
+                }
+            }
+            while(contador_metro < metro){
+                contador_metro ++ ;
+                mensagem.innerHTML +=` <br><br><span style="color:blue ">Pegando o ${contador_metro} º metro </span>`;
+                if(contador_metro == 2){
+                    mensagem.innerHTML +=`<b>- Começando a cansar</b>`;
+                }
+                if(contador_metro > 2){
+                    mensagem.innerHTML +=`<b>- Já está cansado!</b> `;
+                }
+            }
+    }
+    </script>

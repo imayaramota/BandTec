@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variaveis Globais</title>
+</head>
+<body>
+    <button onclick="nota1()">Nota1</button>
+    <button onclick="nota2()">Nota2</button>
+    <button onclick="nota3()">Nota3</button>
+    Sua nota foi: <span id="span_nota"></span><br><br>
+    Sua nota foi: <span id="span_media"></span>
+</body>
+</html>
+<script>
+    ax_nota = 0;
+    ax_quant = 0;
+
+    function nota1(){
+        ax_nota += 1;
+        ax_quant ++;
+        span_notainnerHTML=`1`;
+        span_media.innerHTML=  ax_nota / ax_quant;
+    }
+    function nota2(){
+        ax_nota += 2;
+        ax_quant ++;
+        span_notainnerHTML=`2`;
+        span_media.innerHTML=  ax_nota / ax_quant;
+    }
+    function nota3(){
+        ax_nota += 3;
+        ax_quant ++;
+        span_notainnerHTML=`3`;
+        span_media.innerHTML=  ax_nota / ax_quant;
+    }
+</script>

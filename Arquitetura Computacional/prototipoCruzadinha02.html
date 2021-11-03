@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Caça-palavras
+        <meta charset="utf-8">
+    </title>
+</head>
+
+<body>
+
+    <font>
+        <center>
+            <font color="red"> Caça-palavras
+            </font>
+            <br />
+            <font color="blue">
+                Objetos de casa
+        </center>
+        <br />
+    </font>
+
+    <div id="jogo">
+        <table border="4" align="center">
+            <tr align="center" onchange="errado()">
+                <td>
+                    <span>1</span>
+                </td>
+                <td>
+                    <input id="O_ovo" type="text" style="height: 15px; width: 8px; " >
+                </td>
+                <td>
+                    <input id="V_ovo" type="text" style="height: 15px; width: 8px; ">
+                </td>
+                <td>
+                    <input id="O_ovO" type="text" style="height: 15px; width: 8px; ">
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">C</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">L</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">A</font>
+                </td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+
+            <tr align="center" id="correto" onclick="correto()">
+                <td>
+                    <font color="black" size="4" face="Tahoma">A</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">B</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">A</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">J</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">U</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">R</font>
+                </td>
+            </tr>
+            <tr align="center" onclick="errado()">
+                <td>
+                    <font color="black" size="4" face="Tahoma">M</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">B</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">S</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">H</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">J</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">L</font>
+                </td>
+            </tr>
+            <tr align="center" onclick="errado()">
+                <td>
+                    <font color="black" size="4" face="Tahoma">A</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">K</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">O</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">F</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">X</font>
+                </td>
+                <td>
+                    <font color="black" size="4" face="Tahoma">W</font>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+    <script>
+        //Quando clicar na palavra correta o backgroud da ficará vermelha
+        function correto() {
+            document.getElementById('correto').style.backgroundColor = 'red'
+        }
+
+        //Número de tentativas clicando no errado
+        var tentativas = 5
+        
+		//Função caso clique no errado para as tentativas diminuirem
+        function errado()
+        //function vai() 
+        {
+            tentativas = tentativas - 1
+           
+             
+
+            // if (tentativas == 0) {
+            //     alert('Suas chances acabaram')
+            //     document.getElementById('jogo').innerHTML = '<center><h1>FIM DE JOGO </h1></center>'
+            // }
+            if(O_ovo.value == 'o'){
+                if(V_ovo.value == 'v' ) {
+                    if( O_ovO.value == 'o'){
+                     alert('PARABENS SOMOS GENIOS');
+                    }
+                } 
+            }
+            else{
+                alert('cocosssssssssssS');
+            }
+        
+            
+            
+            
+        }
+
+    </script>

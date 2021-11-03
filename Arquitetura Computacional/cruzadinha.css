@@ -1,0 +1,30 @@
+* {
+    background-color: #add8e6;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+.container {
+    display: flex;
+
+}
+
+.perguntas {
+    width: 500px;
+}
+
+table {
+    border: none;
+    background-color: #add8e6;
+    width: 500px;
+    height: 500px;
+}
+
+input {
+    background-color:white;
+    color: black;
+    border: 2px solid #3065ac;
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}

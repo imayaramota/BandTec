@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03 lista D</title>
+</head>
+<body>
+<br>
+    <select id="frase">
+        <option value="f" id="fra">Selecione uma frase</option>
+        <option value="Uma vez..." id="frase01">Uma vez...</option>
+        <option value="Num belo dia..." id="frase02">Num belo dia...</option>
+        <option value="Numa noite chuvosa..." id="frase03">Numa noite chuvosa...</option>
+    </select>
+    
+    <select id="situacao">
+        <option value="s" id="situ">Selecione uma situação</option>
+        <option value="Um peixe morreu afogado" id="situacao01">Um peixe morreu afogado</option>
+        <option value="Um gato tomou banho" id="situacao02">Um gato tomou banho</option>
+        <option value="Um corvo se curvou" id="situacao03">Um corvo se curvou</option>
+    </select>
+<br><br>
+    <button onclick="carregar()">Carregar</button>
+<br><br>
+     <span id="mensagem"></span><br><br>
+    <img id="img_foto" src="" style="width: 250px;">
+</body>
+</html>
+<script>
+    function carregar(){
+        alert(`${frase.value} ${situacao.value}`);
+
+        if(situacao.value == 'Um peixe morreu afogado' ){
+            mensagem.innerHTML=`${frase.value}`;
+            img_foto.src = `https://qph.fs.quoracdn.net/main-qimg-6a64a9497077533271c6d2b0f931a6d1`;
+        }
+        if(situacao.value == 'Um gato tomou banho' ){
+            mensagem.innerHTML=`${frase.value}`;
+            img_foto.src = `https://procao.ind.br/wp-content/uploads/2019/11/banho-de-gato-procao.jpg`;
+        }
+        if(situacao.value == 'Um corvo se curvou' ){
+            mensagem.innerHTML=`${frase.value}`;
+            img_foto.src = `https://imagens.brasil.elpais.com/resizer/mWT3mNkdlOZKauogNJLx0jJyZok=/1960x0/arc-anglerfish-eu-central-1-prod-prisa.s3.amazonaws.com/public/IPBVDI5S4ZI454S52CCMOGH43U.jpg`;
+        }
+    }
+</script>

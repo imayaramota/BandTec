@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 20 FOR </title>
+</head>
+<body>
+    <h2>SORTE NO AMOR OU JOGO?</h2>
+    <button onclick="sortear()">Ver minha sorte</button> <br> <br>
+    <span id="mensagem"></span> <br><br>
+    <span id="mensagem_frase"></span>
+</body>
+</html>
+<script>
+function sortear() {
+        var contador_amor = 0;
+        var contador_jogo = 0;
+        mensagem.innerHTML ='';
+
+     for (var contador = 0 ; contador <= 21 ; contador++){
+        sorteio = (Math.random() * 1 + 1).toFixed();
+        
+        if (sorteio == 1){
+        mensagem.innerHTML +=` <img src= "https://www.42frases.com.br/wp-content/uploads/2021/03/frases-de-coracao-tumblr.jpg" width="150" height="150">  `;
+        contador_amor ++;
+        }
+        else{
+        mensagem.innerHTML +=` <img src= "https://viladasartescampinas.files.wordpress.com/2013/10/cartas_tarot.jpg" width="150" height="150">  `;
+        contador_jogo ++;
+        }
+
+        console.log(contador_amor, contador_jogo)
+
+        if (contador_amor == 11 ) {   
+           mensagem_frase.innerHTML = `<br> Você tem mais sorte no amor`;
+           break;
+        }
+       else if (contador_amor >  contador_jogo) {   
+           mensagem_frase.innerHTML = `<br> Você tem mais sorte no amor  `;
+        }
+        if (contador_jogo == 11 ) { 
+           mensagem_frase.innerHTML = `<br> Você tem mais sorte no jogo`;
+           break;
+        }
+        else if (contador_jogo >  contador_amor) {   
+           mensagem_frase.innerHTML = `<br> Você tem mais sorte no jogo  `;
+        }
+    }      
+}
+</script>
